@@ -187,7 +187,7 @@
                                         @endcan
                                         @can('edit', $data)
                                             <a href="{{ route('voyager.'.$dataType->slug.'.builder', $data->{$data->getKeyName()}) }}" class="btn btn-sm btn-success pull-right">
-                                                <i class="voyager-list"></i> FAQs
+                                                <i class="voyager-list"></i> FAQs 
                                             </a>
                                         @endcan
                                     </td>
