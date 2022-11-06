@@ -6,7 +6,7 @@
                 <div class="col-lg-2">
                    <div class="logo">
                       <a href="index.html">
-                         <img src="img/logo-big.png" class="img-fluid" alt="">
+                         <img src="{{asset('/storage/'.setting('site.logo'))}}" class="img-fluid" alt="">
                       </a>
                    </div>
                 </div>
@@ -68,3 +68,7 @@
        </div>
     </div>
  </header>
+
+
+
+
