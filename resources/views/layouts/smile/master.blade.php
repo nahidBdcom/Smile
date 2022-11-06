@@ -16,9 +16,11 @@
         @yield('additional-style')
 
     </head>
-    <body class="bg-white">
+    <body>
 
-        @include('layouts.smile.partials.header')
+        {{-- @include('layouts.smile.partials.header') --}}
+        @include('menus.update_header')
+        @include('menus.update_mobile_header')
 
         @yield('content')
 

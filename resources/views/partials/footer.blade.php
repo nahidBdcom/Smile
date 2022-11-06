@@ -1,48 +1,150 @@
-    <footer class="smile-footer">
-        <div class="container-fluid smile-footer-content-outer">
-            <div class="container smile-footer-content-inner">
-                <div class="row">
-                    <div class="col-md-4 order-0 order-md-1 smile-footer-menu">
-                        <div class="smile-footer-menu-head">
-                            Menu
-                            <hr>
-                        </div>
-                        <div class="smile-footer-menu-body">
-                            {{menu('footer')}}
-                        </div>
-                    </div>
-                    <div class="col-md-4 order-1  order-md-2 smile-footer-social">
-                        <div class="d-none d-md-block smile-footer-social-head">
-                            Contact us
-                            <hr>
-                        </div>
-                        <div class="d-none d-md-block smile-footer-social-phone">
-                            {!! setting('site.footer_contact_number') !!}
-                        </div>
-                        <div class="smile-footer-social-media">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a href="https://www.facebook.com/smile.broadband.internet"><img src="{{ asset("storage/social_media_icons/facebook_32.png") }}" alt="facebook"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="{{ asset("storage/social_media_icons/linkedin_32.png") }}" alt="linkedin"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="{{ asset("storage/social_media_icons/twitter_32.png") }}" alt="twitter"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="{{ asset("storage/social_media_icons/youtube_32.png") }}" alt="youtube_32"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 order-2  order-md-0 smile-footer-address">
-                        <div class="smile-footer-address-head">
-                            Head office
-                            <hr>
-                        </div>
-                        <div class="smile-footer-address-body">
-                            {!! setting('site.footer_head_office_address') !!}
-                        </div>
-                    </div>
+<footer>
+    <div class="main-footer">
+       <div class="container m-0-auto">
+          <div class="row">
+             <div class="col-lg-6 col-sm-6 or-sm-1">
+                <h5 class="footer-title">Helpdesk 24/7</h5>
+                <ul>
+                   <li>
+                      <a href="tel:+09666666666"> {!! setting('site.footer_contact_number') !!}</a>
+                   </li>
+                   <li>
+                      <a href="mailto:helpdesk@smile.com.bd">helpdesk@smile.com.bd</a>
+                   </li>
+                </ul>
+                <div class="info-text">
+                   <p class="footer-info">{!! setting('site.footer_head_office_address') !!}</p>
                 </div>
-                
-            </div>
-        </div>
-        <div class="container-fluid d-flex justify-content-center align-items-center smile-footer-copyright">
-            &copy;&nbsp; <a href="https://www.bdcom.com/" target="_blank" >BDCOM Online Ltd.</a>&nbsp; All rights reserved.
-        </div>
-        
-    </footer>
+             </div>
+             <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-2">
+                <h5 class="footer-title ftc">Collections</h5>
+                <ul>
+                   <li>
+                      <a href="bill-payment-guide.html">Bill Payment Guide</a>
+                   </li>
+                   <li>
+                      <a href="connectivity-form.html">Connectivity Form</a>
+                   </li>
+                   <li>
+                      <a href="media.html">Media Center</a>
+                   </li>
+                   <li>
+                      <a href="user-review.html">Reviews</a>
+                   </li>
+
+                   <li class="lg-hide-2">
+                      <a href="terms.html">Terms of Uses</a>
+                   </li>
+
+                   <li  class="lg-hide-2">
+                      <a href="privacy.html">Privacy Policy</a>
+                   </li>
+
+                </ul>
+             </div>
+
+             <div class="col-sm-6 lg-hide-2 or-sm-3 ftc">
+                <p class="footer-social-below">Social Media</p>
+                <div class="footer-menu-social">
+                   <a href="#">
+                      <span class="fa-stack fa-lg">
+                         <i class="fa fa-square fa-stack-2x fa-3x"></i>
+                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+                   <a href="#">
+                      <span class="fa-stack fa-lg">
+                         <i class="fa fa-square fa-stack-2x"></i>
+                         <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+                   <a href="#">
+                      <span class="fa-stack fa-lg">
+                         <i class="fa fa-square fa-stack-2x"></i>
+                         <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+                   <a href="#">
+                      <span class="fa-stack fa-lg">
+                         <i class="fa fa-square fa-stack-2x"></i>
+                         <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+                </div>
+             </div>
+
+
+             <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-4">
+                <h5 class="footer-title">Main Menu</h5>
+                <ul>
+                   <li>
+                      <a href="standard-package.html">Packages</a>
+                   </li>
+                   <li>
+                      <a href="faq.html">FAQs</a>
+                   </li>
+                   <li>
+                      <a href="about.html">About</a>
+                   </li>
+                   <li>
+                      <a href="contact.html">Contact</a>
+                   </li>
+                   <li>
+                      <a href="self-care.html">Self Care</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+          <div class="footer-below">
+             <div class="row">
+                <div class="col-lg-3">
+                   <p class="footer-social-below footer-social-below-2">Social Media</p>
+                   <div class="footer-menu-social-2">
+                      <a href="#">
+                         <span class="fa-stack fa-lg">
+                            <i class="fa fa-square fa-stack-2x fa-3x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                         </span>
+                      </a>
+                      <a href="#">
+                         <span class="fa-stack fa-lg">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                         </span>
+                      </a>
+                      <a href="#">
+                         <span class="fa-stack fa-lg">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                         </span>
+                      </a>
+                      <a href="#">
+                         <span class="fa-stack fa-lg">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                         </span>
+                      </a>
+                   </div>
+                </div>
+                <div class="col-lg-3 foot-g">
+                   <ul>
+                      <li>
+                         <a href="privacy.html">Privacy Policy</a>
+                      </li>
+                   </ul>
+                </div>
+                <div class="col-lg-3 foot-g">
+                   <ul>
+                      <li>
+                         <a href="terms.html">Terms of Uses</a>
+                      </li>
+                   </ul>
+                </div>
+                <div class="col-lg-3 foot-g">
+                   <p class="footer-copy"> © 2022 <a href="https://www.bdcom.com" style="color:#4D4D4D" target="_blank">BDCOM Online Ltd.</a> All rights reserved. </p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
