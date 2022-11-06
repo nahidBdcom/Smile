@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html class="no-js" lang="en">
    <head>
       <meta charset="utf-8">
@@ -7,20 +7,21 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="manifest" href="site.webmanifest">
-      <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/smile/img/favicon.png')}}">
+      <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
       <!-- Place favicon.ico in the root directory -->
       <!-- CSS here -->
-      <link rel="stylesheet" href="{{asset('assets/smile/css/bootstrap.min.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/smile/css/fontawesome-all.min.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/bootstrap.min.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/fontawesome-all.min.css')}}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="{{asset('assets/smile/css/slick.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/smile/css/default.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/smile/css/style.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/smile/css/responsive.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/slick.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/default.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/style.css')}}">
+      <link rel="stylesheet" href="{{asset('assets/css/update/responsive.css')}}">
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
-   </head>
+   </head> --}}
+   @include("layouts.smile.partials.style")
    <body>
       <!--[if lte IE 9]>
 							<p class="browserupgrade">You are using an
@@ -28,7 +29,7 @@
 								<a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
 							</p>
 							<![endif]-->
-      <header class="header navbar  fixed-top mz-sm-none nav-scl">
+      {{-- <header class="header navbar  fixed-top mz-sm-none nav-scl">
          <div class="header-top">
             <div class="menu-area">
                <div class="container">
@@ -97,14 +98,15 @@
                </div>
             </div>
          </div>
-      </header>
+      </header> --}}
+      @include("menus.update_header")
 
           <!-- Mobile Header Start -->
-          <header class="transparent-header fixed-top d-lg-none nav-scl">
+          {{-- <header class="transparent-header fixed-top d-lg-none nav-scl">
             <nav class="navbar navbar-expand-lg navbar-light ">
 
                <div>
-               <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+               <a class="navbar-brand" href="index.html"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
             </div>
 
 
@@ -165,7 +167,8 @@
 
 
             </nav>
-         </header>
+         </header> --}}
+         @include("menus.update_mobile_header")
          <!-- Mobile Header End -->
 
 
@@ -178,8 +181,8 @@
                   <div class="single-slider">
                      <div class="row align-items-center no-gutters">
                         <div class="col-lg-12">
-                           <img src="{{asset('assets/smile/img/slider-d-1.jpg')}}" class="img-fluid sm-hide" alt="">
-                           <img src="{{asset('assets/smile/img/slider-m-1.jpg')}}" class="img-fluid lg-hide" alt="">
+                           <img src="{{asset('assets/img/slider-d-1.jpg')}}" class="img-fluid sm-hide" alt="">
+                           <img src="{{asset('assets/img/slider-m-1.jpg')}}" class="img-fluid lg-hide" alt="">
                            <div class="section-1-area-wrapper text-left">
                               <h2>Enjoy Accurate <br> Internet Speed 24/7 </h2>
                               <p>Slow internet speed can trouble you in your daily internet usage. So, we don’t compromise in delivering the committed speed anytime day or night. Choose any of Smile’s Standard Packages to enjoy package-wise accurate speed 24/7.</p>
@@ -206,8 +209,8 @@
                   <div class="single-slider">
                      <div class="row align-items-center no-gutters">
                         <div class="col-lg-12">
-                           <img src="{{asset('assets/smile/img/slider-d-2.jpg')}}" class="img-fluid sm-hide" alt="">
-                           <img src="{{asset('assets/smile/img/slider-m-2.jpg')}}" class="img-fluid lg-hide" alt="">
+                           <img src="{{asset('assets/img/slider-d-2.jpg')}}" class="img-fluid sm-hide" alt="">
+                           <img src="{{asset('assets/img/slider-m-2.jpg')}}" class="img-fluid lg-hide" alt="">
                            <div class="section-1-area-wrapper text-left">
                               <h2>Enjoy Accurate <br> Internet Speed 24/7 </h2>
                               <p>Slow internet speed can trouble you in your daily internet usage. So, we don’t compromise in delivering the committed speed anytime day or night. Choose any of Smile’s Standard Packages to enjoy package-wise accurate speed 24/7.</p>
@@ -234,8 +237,8 @@
                   <div class="single-slider">
                      <div class="row align-items-center no-gutters">
                         <div class="col-lg-12">
-                           <img src="{{asset('assets/smile/img/slider-d-3.jpg')}}" class="img-fluid sm-hide" alt="">
-                           <img src="{{asset('assets/smile/img/slider-m-3.jpg')}}" class="img-fluid lg-hide" alt="">
+                           <img src="{{asset('assets/img/slider-d-3.jpg')}}" class="img-fluid sm-hide" alt="">
+                           <img src="{{asset('assets/img/slider-m-3.jpg')}}" class="img-fluid lg-hide" alt="">
                            <div class="section-1-area-wrapper text-left">
                               <h2>Enjoy Accurate <br> Internet Speed 24/7 </h2>
                               <p>Slow internet speed can trouble you in your daily internet usage. So, we don’t compromise in delivering the committed speed anytime day or night. Choose any of Smile’s Standard Packages to enjoy package-wise accurate speed 24/7.</p>
@@ -288,28 +291,28 @@
                         <div class="row align-items-center mob-carosel">
                            <div class="col-lg-6 sect-3-odd">
                               <div class="section-3-grid">
-                                 <img src="img/icon.png" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/img/icon.png')}}" class="img-fluid" alt="">
                                  <h5>Fiber Optic Connectivity</h5>
                                  <p>We connect our users with high quality fiber optic cable.</p>
                               </div>
                            </div>
                            <div class="col-lg-6 sect-3-even">
                               <div class="section-3-grid ">
-                                 <img src="img/2.png" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/img/2.png')}}" class="img-fluid" alt="">
                                  <h5>No Peak No Off-Peak</h5>
                                  <p>Our users enjoy same bandwidth speed 24 hours.</p>
                               </div>
                            </div>
                            <div class="col-lg-6 sect-3-odd">
                               <div class="section-3-grid">
-                                 <img src="img/3.png" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/img/3.png')}}" class="img-fluid" alt="">
                                  <h5>Unlimited Data</h5>
                                  <p>Enjoy unlimited upload and download at accurate speed.</p>
                               </div>
                            </div>
                            <div class="col-lg-6 sect-3-even">
                               <div class="section-3-grid">
-                                 <img src="img/4.png" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/img/4.png')}}" class="img-fluid" alt="">
                                  <h5>24/7 Helpdesk Support</h5>
                                  <p>Our engineers are committed to assist whenver you need.</p>
                               </div>
@@ -578,7 +581,7 @@
                <div class="container">
                <div class="row test-slider-active">
                   <div class="col-lg-3 col-sm-12">
-                     <img class="test-icon img-fluid" src="{{asset('assets/smile/img/testimonial.png')}}" alt="">
+                     <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
                      <div class="dart-box">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -595,7 +598,7 @@
                      </div>
                   </div>
                   <div class="col-lg-3 col-sm-12">
-                     <img class="test-icon img-fluid" src="{{asset('assets/smile/img/testimonial.png')}}" alt="">
+                     <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
                      <div class="dart-box">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -612,7 +615,7 @@
                      </div>
                   </div>
                   <div class="col-lg-3 col-sm-12">
-                     <img class="test-icon img-fluid" src="{{asset('assets/smile/img/testimonial.png')}}" alt="">
+                     <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
                      <div class="dart-box">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -629,7 +632,7 @@
                      </div>
                   </div>
                   <div class="col-lg-3 col-sm-12">
-                     <img class="test-icon img-fluid" src="{{asset('assets/smile/img/testimonial.png')}}" alt="">
+                     <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
                      <div class="dart-box">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -645,7 +648,7 @@
                      </div>
                   </div>
                   <div class="col-lg-3 col-sm-12">
-                     <img class="test-icon img-fluid" src="{{asset('assets/smile/img/testimonial.png')}}" alt="">
+                     <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
                      <div class="dart-box">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -722,7 +725,7 @@
 
    <div class="row test-slider-active test-slider-active-mob ">
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -739,7 +742,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -757,7 +760,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -775,7 +778,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -793,7 +796,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -810,7 +813,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -828,7 +831,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -846,7 +849,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 dhaka">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -866,7 +869,7 @@
 
 
       <div class="col-lg-4 col-sm-12 khulna ">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -883,7 +886,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -901,7 +904,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -919,7 +922,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -938,7 +941,7 @@
 
 
       <div class="col-lg-4 col-sm-12 khulna ">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -955,7 +958,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -973,7 +976,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -991,7 +994,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 khulna">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1011,7 +1014,7 @@
 
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1028,7 +1031,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1046,7 +1049,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1064,7 +1067,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1083,7 +1086,7 @@
 
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1100,7 +1103,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1118,7 +1121,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1136,7 +1139,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 rajsahi">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1156,7 +1159,7 @@
 
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1173,7 +1176,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1191,7 +1194,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1209,7 +1212,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1228,7 +1231,7 @@
 
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1245,7 +1248,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1263,7 +1266,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1281,7 +1284,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 barishal">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1302,7 +1305,7 @@
 
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1319,7 +1322,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1337,7 +1340,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1355,7 +1358,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1373,7 +1376,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1390,7 +1393,7 @@
          </div>
       </div>
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1408,7 +1411,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1426,7 +1429,7 @@
       </div>
 
       <div class="col-lg-4 col-sm-12 shylet">
-         <img class="test-icon img-fluid" src="img/testimonial.png" alt="">
+         <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
          <div class="dart-box">
             <i class="fas fa-star" aria-hidden="true"></i>
             <i class="fas fa-star" aria-hidden="true"></i>
@@ -1463,7 +1466,7 @@
                               <div class="col-lg-12">
                                  <div class="section-6-wrapper">
                                     <h2>Coverage Area</h2>
-                                    <img src="img/Rectangle-map.png" class="img-fluid">
+                                    <img src="{{asset('assets/img/Rectangle-map.png')}}" class="img-fluid">
                                     <p>At present Smile Broadband is available at 18 district cities. Uses the list below to find if we have coverage in your area. First select the district and then the area. If you don’t find your district or area in the list, it means we might not have coverage yet in that particular area.</p>
 
 
@@ -1533,7 +1536,7 @@
                         <div class="col-lg-12">
                            <div class="section-6-wrapper">
                               <h2>Coverage Area</h2>
-                              <img src="img/Rectangle-map.png" class="img-fluid">
+                              <img src="{{asset('assets/img/Rectangle-map.png')}}" class="img-fluid">
                               <p>At present Smile Broadband is available at 18 district cities. Uses the list below to find if we have coverage in your area. First select the district and then the area. If you don’t find your district or area in the list, it means we might not have coverage yet in that particular area.</p>
 
 
@@ -1609,7 +1612,7 @@
                <div class="row">
                   <div class="col-lg-6 section-7-wrapper text-center">
                      <div class="faq-heading">
-                        <img src="img/q.png" class="img-fluid" alt="">
+                        <img src="{{asset('assets/img/q.png')}}" class="img-fluid" alt="">
                      </div>
                   </div>
                   <div class="col-lg-6">
@@ -1703,7 +1706,7 @@
                      <div class="col-sm-12  col-lg-6 c_br">
                         <div class="section-8-wrapper-first pl-160 pr-160">
                            <div class="rect-icon">
-                              <img src="img/Rectangle.png" class="img-fluid" alt="">
+                              <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
                            </div>
                            <div class="section-8-content">
                               <h5>Let Us Call You</h5>
@@ -1726,14 +1729,14 @@
                         <div class="section-8-wrapper-2nd">
                            <div class="sml-email-info">
                               <div class="rect-icon">
-                                 <img src="img/Rectangle.png" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
                               </div>
                               <div class="section-8-content">
                                  <h5 class="h5"><a href="tel:+09666666666">09666 333 555</a></h5>
                                  <h5 class="h5"><a href="mailto:helpdesk@smile.com.bd">helpdesk@smile.com.bd</a></h5>
                               </div>
                            </div>
-                           <img src="img/contact-bg.png" class="img-fluid" alt="">
+                           <img src="{{asset('assets/img/contact-bg.png')}}" class="img-fluid" alt="">
                         </div>
                      </div>
                   </div>
@@ -1750,7 +1753,7 @@
                   <div class="section-8-wrapper-2nd">
                      <div class="sml-email-info">
                         <div class="rect-icon">
-                           <img src="img/Rectangle.png" class="img-fluid" alt="">
+                           <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
                         </div>
                         <div class="section-8-content">
                            <h5 class="h5"><a href="tel:+09666666666">09666 333 555</a></h5>
@@ -1758,7 +1761,7 @@
                         </div>
                      </div>
                      <div class="text-end">
-                     <img src="img/contact-bg.png" class="img-fluid mobile-con-img" alt="">
+                     <img src="{{asset('assets/img/contact-bg.png')}}" class="img-fluid mobile-con-img" alt="">
                      </div>
                   </div>
                </div>
@@ -1932,13 +1935,15 @@
 
       <!-- JS here -->
 
-      <script src="{{asset('assets/smile/js/vendor/modernizr-3.5.0.min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/vendor/jquery-1.12.4.min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/bootstrap.min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/one-page-nav-min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/slick.min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/jquery.meanmenu.min.js')}}"></script>
-      <script src="{{asset('assets/smile/js/main.js')}}"></script>
-      <script src="{{asset('assets/smile/js/district.js')}}"></script>
+      {{-- <script src="{{asset('assets/js/update/vendor/modernizr-3.5.0.min.js')}}"></script>
+      <script src="{{asset('assets/js/update/vendor/jquery-1.12.4.min.js')}}"></script>
+      <script src="{{asset('assets/js/update/bootstrap.min.js')}}"></script>
+      <script src="{{asset('assets/js/update/one-page-nav-min.js')}}"></script>
+      <script src="{{asset('assets/js/update/slick.min.js')}}"></script>
+      <script src="{{asset('assets/js/update/jquery.meanmenu.min.js')}}"></script>
+      <script src="{{asset('assets/js/update/main.js')}}"></script>
+      <script src="{{asset('assets/js/update/district.js')}}"></script> --}}
+
+      @include("layouts.smile.partials.javascript")
    </body>
 </html>

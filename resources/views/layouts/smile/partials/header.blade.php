@@ -19,7 +19,7 @@
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-content">
-                    {{menu('main_menu', 'menus.smile_topmenu_bootstrap')}}
+                    {{menu('main_menu', 'menus.update_header')}}
                 </div>
             </div>
         </nav>

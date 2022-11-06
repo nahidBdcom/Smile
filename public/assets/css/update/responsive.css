@@ -6,7 +6,7 @@
 
 @media (min-width: 1920px) {
     .section-3-area {
-       // background-image: none !important;
+       /* // background-image: none !important; */
     }
     .mz-fluid {
         width: 100%;
@@ -103,7 +103,7 @@
 
     .section-3-area {
 
-        background-image: url("../img/section-2-banner.png");
+        background-image: url("../../img/section-2-banner.png");
         background-repeat: no-repeat;
         background-position: bottom right;
 
