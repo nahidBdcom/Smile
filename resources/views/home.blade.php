@@ -3,7 +3,7 @@
    @section('content')
 
   
-        
+       <main> 
          @include("partials.homepage_slider_updated")
         
          @include("partials.homepage_description")
@@ -21,14 +21,8 @@
          @include("partials.homepage_contact_form")
          
          @include("partials.homepage_contact_info")
+      </main>
 
-
-
-
-
-
-  
-         {{-- @include("layouts.smile.partials.javascript") --}}
      
 @endsection
 

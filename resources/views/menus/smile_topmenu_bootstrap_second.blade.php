@@ -7,7 +7,7 @@
 @endphp
 
 @if(!isset($innerLoop))
-<ul class="moz-menu">
+<ul>
 @else
 <ul class="submenu ">
 @endif
@@ -21,7 +21,7 @@
         }else{
             $listAncorClass = "dropdown-item ";
         }
-        $listItemClass = "";
+        $listItemClass = " ";
         $linkAttributes =  null;
         $styles = null;
         $icon = null;
@@ -36,9 +36,9 @@
         // With Children Attributes
         if(!$originalItem->children->isEmpty()) {
             if($menuLevel > 1){
-                $listItemClass .= ' ';
+                $listItemClass .= 'dropdown dropend ';
             }else{
-                $listItemClass .= '';
+                $listItemClass .= 'dropdown ';
                 $caret = '<span class="caret"></span>';
             }
             $listAncorClass .= "dropdown-toggle ";
@@ -56,24 +56,16 @@
         }
     @endphp
 
-    <li {{ $loop->index == 0 ? 'class=first-menus' : ''}}>
-        <a href="#">
+    <li>
+        <a href="{{ url($item->link()) }}" {!! $linkAttributes ?? '' !!}>
+            {{--  {!! $icon !!}  --}}
             {{ $item->title }}
+            {{--  {!! $caret !!}  --}}
         </a>
         @if(!$originalItem->children->isEmpty())
-            <i class="fa fa-solid fa-chevron-down menu-icon"></i>
-        @endif
-
-        @if(!$originalItem->children->isEmpty())
-        @include('menus.smile_topmenu_bootstrap_second', ['items' => $originalItem->children, 'options' => $options, 'innerLoop' => true, 'menuLevel' => $menuLevel])
+        @include('voyager::menus.smile_topmenu_bootstrap', ['items' => $originalItem->children, 'options' => $options, 'innerLoop' => true, 'menuLevel' => $menuLevel])
         @endif
     </li>
 @endforeach
 
 </ul>
-
-{{-- @if(setting('site.show_con_link_main_menu'))
-<div class="d-flex justify-content-center align-items-center main_menu_con_block">
-    <a class="d-flex justify-content-center align-items-center" href="{{url(setting('site.show_con_link_mm_link'))}}">{{setting('site.show_con_link_mm_text')}}</a>
-</div>
-@endif --}}
