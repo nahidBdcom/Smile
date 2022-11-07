@@ -12,34 +12,7 @@
                 </div>
                 <div class="col-lg-7  align-items-center border-r p-0">
                    <div class="main-menu f-right">
-                      <nav>
-                         <ul class="moz-menu">
-                            <li class="first-menus">
-                               <a href="#">Packages</a>
-                               <i class="fa fa-solid fa-chevron-down menu-icon"></i>
-                               <ul class="submenu">
-                                  <li>
-                                     <a href="standard-package.html">Standard</a>
-                                  </li>
-                                  <li>
-                                     <a href="ek-desh-ek-rate.html">Ek Desh Ek Rate</a>
-                                  </li>
-                               </ul>
-                            </li>
-                            <li>
-                               <a href="faq.html">FAQs</a>
-                            </li>
-                            <li>
-                               <a href="about.html">About</a>
-                            </li>
-                            <li>
-                               <a href="contact.html">Contact</a>
-                            </li>
-                            <li>
-                               <a href="self-care.html">Self Care</a>
-                            </li>
-                         </ul>
-                      </nav>
+                       {{menu('main_menu', 'menus.smile_topmenu_bootstrap')}}
                    </div>
                    <div class="header-btn f-right"></div>
                 </div>
