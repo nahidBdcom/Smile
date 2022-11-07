@@ -1,7 +1,8 @@
 
    @extends("layouts.smile.master")
    @section('content')
- 
+
+  
         
          @include("partials.homepage_slider_updated")
         
@@ -27,10 +28,10 @@
 
 
   
+         {{-- @include("layouts.smile.partials.javascript") --}}
      
 @endsection
 
       
 
-      @include("layouts.smile.partials.javascript")
- 
+      

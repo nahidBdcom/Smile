@@ -195,7 +195,7 @@ $(window).on('scroll', function () {
 
 
 // isotop
-$('.grid').imagesLoaded( function() {
+$('.grid').allImagesLoaded( function() {
 	// init Isotope
 	var $grid = $('.grid').isotope({
 	  itemSelector: '.grid-item',
