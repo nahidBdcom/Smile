@@ -77,21 +77,7 @@
              <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-4">
                 <h5 class="footer-title">Main Menu</h5>
                 <ul>
-                   <li>
-                      <a href="standard-package.html">Packages</a>
-                   </li>
-                   <li>
-                      <a href="faq.html">FAQs</a>
-                   </li>
-                   <li>
-                      <a href="about.html">About</a>
-                   </li>
-                   <li>
-                      <a href="contact.html">Contact</a>
-                   </li>
-                   <li>
-                      <a href="self-care.html">Self Care</a>
-                   </li>
+                   {{menu('main_menu', 'menus.customized_footer')}}
                 </ul>
              </div>
           </div>
