@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageCategory extends Model
 {
-    
+
 
     public static function boot()
     {
@@ -30,7 +30,7 @@ class PackageCategory extends Model
     /**
      * Return the Highest Order of this Model
      *
-     * 
+     *
      *
      * @return number Order number
      */
@@ -46,5 +46,10 @@ class PackageCategory extends Model
         }
 
         return $order;
+    }
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class,'package_category_id','id');
     }
 }
