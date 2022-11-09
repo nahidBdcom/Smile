@@ -1,7 +1,8 @@
 /node_modules
 /public/hot
-# /public/assets
-# /public/storage
+/public
+/.gitignore
+/public/storage
 /public/storage_old
 /storage/*.key
 /vendor

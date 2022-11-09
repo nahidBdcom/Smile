@@ -40,7 +40,7 @@ class CommonController extends Controller
         //echo url()->current();
         //dd($homeContent["description_title"]);
         //url($item->link());
-        $customers = Customer::where('status',1)->get();
+        // $customers = Customer::where('status',1)->get();
         $customerReviews = CustomerReview::where('show_at_home',1)->get();
         $slideshows = Slideshow::where('status', 1)->orderBy('order')->get();
         $serviceValues = ServiceValue::where('status', 1)->orderBy('order')->get();
@@ -49,7 +49,7 @@ class CommonController extends Controller
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customers','customerReviews'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews'));
     }
 
     public function about()

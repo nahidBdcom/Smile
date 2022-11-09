@@ -141,110 +141,24 @@
          <div class="col-lg-3 col-sm-12">
             <img class="test-icon img-fluid" src="{{asset('/storage/'.$customerReview->customer->photo)}}" alt="">
             <div class="dart-box">
-               
-                  
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  
+
+
+                @for($i = 1; $i <= $customerReview->ratings; $i++)
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                @endfor
+
                   {{-- <span class="date-2 collapse" id="collapseWidthExample111"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span> --}}
                   {{-- <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample111" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a> --}}
-               
+
                <p class="date">{{$customerReview->review_date}}</p>
                <span class="date-2">{!! $customerReview->description !!}</span>
-              
+
 
                <p class="date-3">{{$customerReview->customer->name}}</p>
                <p class="date-4">{{$customerReview->customer->district->name}}</p>
             </div>
          </div>
          @endforeach
-          {{-- <div class="col-lg-3 col-sm-12">
-             <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
-             <div class="dart-box">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <p class="date">12 Jan 2022</p>
-                <span class="date-2">Let's Play with SMILE Broadband Internet Engie join forces to convert the GOS, Orange's maiLet's Play with SMILE Broadbend internet</span>
-                <span class="date-2 collapse" id="collapseWidthExample111"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span>
-                <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample111" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a>
-
-                <p class="date-3">Rahim</p>
-                <p class="date-4">From, Jamalpur</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-sm-12">
-             <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
-             <div class="dart-box">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <p class="date">12 Jan 2022</p>
-                <span class="date-2">Let's Play with SMILE Broadband Internet Engie join forces to convert the GOS, Orange's maiLet's Play with SMILE Broadbend internet</span>
-                <span class="date-2 collapse" id="collapseWidthExample9"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span>
-                <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample9" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a>
-
-                <p class="date-3">Rahim</p>
-                <p class="date-4">From, Jamalpur</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-sm-12">
-             <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
-             <div class="dart-box">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <p class="date">12 Jan 2022</p>
-                <span class="date-2">Let's Play with SMILE Broadband Internet Engie join forces to convert the GOS, Orange's maiLet's Play with SMILE Broadbend internet</span>
-                <span class="date-2 collapse" id="collapseWidthExample1"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span>
-                <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a>
-
-                <p class="date-3">Rahim</p>
-                <p class="date-4">From, Jamalpur</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-sm-12">
-             <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
-             <div class="dart-box">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <p class="date">12 Jan 2022</p>
-                <span class="date-2">Let's Play with SMILE Broadband Internet Engie join forces to convert the GOS, Orange's maiLet's Play with SMILE Broadbend internet</span>
-                <span class="date-2 collapse" id="collapseWidthExample2"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span>
-                <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a>
-                <p class="date-3">Rahim</p>
-                <p class="date-4">From, Jamalpur</p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-sm-12">
-             <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
-             <div class="dart-box">
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <i class="fas fa-star" aria-hidden="true"></i>
-                <p class="date">12 Jan 2022</p>
-                <span class="date-2">Let's Play with SMILE Broadband Internet Engie join forces to convert the GOS, Orange's maiLet's Play with SMILE Broadbend internet</span>
-                <span class="date-2 collapse" id="collapseWidthExample3"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span>
-                <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample" role="button">Read more</a>
-
-                <p class="date-3">Rahim</p>
-                <p class="date-4">From, Jamalpur</p>
-             </div>
-          </div> --}}
        </div>
        <a class="btn mt-55" href="#"> Post review
           <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>
