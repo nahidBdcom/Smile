@@ -17,7 +17,7 @@
     @php
         $originalItem = $item;
         if(!isset($innerLoop)){
-            $listAncorClass ="nav-link ";
+            $listAncorClass ="nav-link1 ";
         }else{
             $listAncorClass = "dropdown-item ";
         }

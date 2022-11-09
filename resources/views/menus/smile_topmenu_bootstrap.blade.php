@@ -57,7 +57,7 @@
     @endphp
 
     <li {{ $loop->index == 0 ? 'class=first-menus' : ''}}>
-        <a href="#">
+        <a href="{{ url($item->link()) }}">
             {{ $item->title }}
         </a>
         @if(!$originalItem->children->isEmpty())

@@ -28,24 +28,30 @@
 @endsection     
 
 
-{{-- @section('additional-style')
+@section('additional-style')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.1/dist/select2-bootstrap-5-theme.min.css" />
-@endsection --}}
+@endsection
 
 @section('content')
-<div class="breadcrumb_area sml-wht">
-    <div class="container">
-       <div class="row">
-          <nav aria-label="breadcrumb">
-             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Connectivity Form</li>
-             </ol>
-          </nav>
-       </div>
-    </div>
- </div>
+        <div class="container-fluid smile-content-title d-flex align-items-center justify-content-center">
+                <div class="row">
+                        <div class="col-12">{{ $mainContent["title"] }}</div>
+                </div>
+        </div>
+        <div class="container s-pt-50">
+                <div class="row">
+                    <div class="col-12 col-md-6 s-pb-25 connectivity-title">
+                        {{ $mainContent["description_title"] }}
+                    </div>
+                    <div class="col-12 connectivity-description_excerpt">
+                        {!! $mainContent["description_excerpt"] !!}
+                    </div>
+                    <div class="col-12 connectivity-description_excerpt">
+                        {!! $mainContent["description_more"] !!}
+                    </div>
+                </div>
+        </div>
         @if($districts->count())
         <!-- Connectivity Request Form Block -->
         @include('partials.connectivity_form')
