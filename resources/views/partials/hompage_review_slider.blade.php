@@ -137,7 +137,31 @@
        </div>
        <div class="container">
        <div class="row test-slider-active">
-          <div class="col-lg-3 col-sm-12">
+         @foreach ($customerReviews as $customerReview)
+         <div class="col-lg-3 col-sm-12">
+            <img class="test-icon img-fluid" src="{{asset('/storage/'.$customerReview->customer->photo)}}" alt="">
+            <div class="dart-box">
+               
+                  
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  
+                  {{-- <span class="date-2 collapse" id="collapseWidthExample111"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span> --}}
+                  {{-- <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample111" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a> --}}
+               
+               <p class="date">{{$customerReview->review_date}}</p>
+               <span class="date-2">{!! $customerReview->description !!}</span>
+              
+
+               <p class="date-3">{{$customerReview->customer->name}}</p>
+               <p class="date-4">{{$customerReview->customer->district->name}}</p>
+            </div>
+         </div>
+         @endforeach
+          {{-- <div class="col-lg-3 col-sm-12">
              <img class="test-icon img-fluid" src="{{asset('assets/img/testimonial.png')}}" alt="">
              <div class="dart-box">
                 <i class="fas fa-star" aria-hidden="true"></i>
@@ -220,7 +244,7 @@
                 <p class="date-3">Rahim</p>
                 <p class="date-4">From, Jamalpur</p>
              </div>
-          </div>
+          </div> --}}
        </div>
        <a class="btn mt-55" href="#"> Post review
           <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>

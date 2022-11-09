@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Validator;
+use App\Models\Post;
+use App\Models\Content;
 //use Illuminate\Foundation\Http\FormRequest;
 
-use Illuminate\Support\Facade\DB;
-
-use App\Helpers\UserSystemInfoHelper;
-use App\Helpers\SmileFunctionHelper;
-
 use App\Models\Package;
-use App\Models\PackageFaq;
-use App\Models\Slideshow;
-use App\Models\ServiceValue;
-use App\Models\PackageCategory;
-use App\Models\SolutionRequirementType;
-use App\Models\SolutionRequest;
-use App\Models\Content;
-use App\Models\ContentFaq;
-use App\Models\ProblemType;
-use App\Models\Post;
+
 use App\Models\Category;
+use App\Models\Customer;
+
+use App\Models\Slideshow;
+use App\Models\ContentFaq;
+use App\Models\PackageFaq;
+use App\Models\ProblemType;
+use App\Models\ServiceValue;
+use Illuminate\Http\Request;
+use App\Models\CustomerReview;
 use App\Models\NetworkCoverage;
+use App\Models\PackageCategory;
+use App\Models\SolutionRequest;
+use Illuminate\Support\Facade\DB;
+use App\Helpers\SmileFunctionHelper;
+use App\Http\Controllers\Controller;
+use App\Helpers\UserSystemInfoHelper;
 use App\Models\ConnectivityApplication;
+use App\Models\SolutionRequirementType;
 
 
 class CommonController extends Controller
@@ -38,6 +40,8 @@ class CommonController extends Controller
         //echo url()->current();
         //dd($homeContent["description_title"]);
         //url($item->link());
+        $customers = Customer::where('status',1)->get();
+        $customerReviews = CustomerReview::where('show_at_home',1)->get();
         $slideshows = Slideshow::where('status', 1)->orderBy('order')->get();
         $serviceValues = ServiceValue::where('status', 1)->orderBy('order')->get();
         $packages = Package::where('status', 1)->where('show_in_honepage',1)->orderBy('order')->get();
@@ -45,7 +49,7 @@ class CommonController extends Controller
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customers','customerReviews'));
     }
 
     public function about()
