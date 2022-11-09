@@ -31,10 +31,10 @@ use App\Models\ConnectivityApplication;
 class CommonController extends Controller
 {
     public function home()
-    {        
-        
+    {
+
         $homeContent = Content::where('slug', "/")->where('status', 1)->firstOrFail();
-        
+
         //echo url()->current();
         //dd($homeContent["description_title"]);
         //url($item->link());
@@ -43,27 +43,27 @@ class CommonController extends Controller
         $packages = Package::where('status', 1)->where('show_in_honepage',1)->orderBy('order')->get();
         $requirementTypes = SolutionRequirementType::where('status', 1)->orderBy('order')->get();
         //dd($slideshows);
-        
+
 
        return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes'));
     }
 
     public function about()
-    {        
+    {
         $mainContent = Content::where('slug', "about")->where('status', 1)->firstOrFail();
         $networkCoverages = NetworkCoverage::where('status', 1)->orderBy('order')->get();
         //$problemTypes = ProblemType::where('status', 1)->get();
-        
+
 
        return view('about', compact('mainContent','networkCoverages'));
     }
 
     public function helpdesk()
-    {        
+    {
         $mainContent = Content::where('slug', "helpdesk")->where('status', 1)->firstOrFail();
         $faqs = ContentFaq::where('content_id', $mainContent->id)->where('status', 1)->orderBy('order')->get();
         $problemTypes = ProblemType::where('status', 1)->get();
-        
+
 
        return view('helpdesk', compact('mainContent','faqs','problemTypes'));
     }
@@ -133,7 +133,7 @@ class CommonController extends Controller
                 return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
             }
         }
-       
+
     }
 
 
@@ -149,7 +149,7 @@ class CommonController extends Controller
         //dd($package);
     }
 
-    public function blog(){        
+    public function blog(){
 
         $mainContent = Content::where('slug', "blog")->where('status', 1)->firstOrFail();
         $blogs = Post::where('status', '=', 'PUBLISHED')->orderBy('featured', 'DESC')->orderBy('created_at', 'DESC')->get();
@@ -162,7 +162,7 @@ class CommonController extends Controller
     public function singleBlog(Post $blog)
     {
         # code...
-        
+
         $relatedBlogs = Post::where('status', '=', 'PUBLISHED')->where('category_id', '=', $blog->category_id)->orderBy('featured', 'DESC')->orderBy('created_at', 'DESC')->limit(3)->get();
         $next = Post::where('id', '>', $blog->id)->where('status', '=', 'PUBLISHED')->orderBy('id')->first();
         $previous = Post::where('id', '<', $blog->id)->where('status', '=', 'PUBLISHED')->orderBy('id','desc')->first();
@@ -176,16 +176,14 @@ class CommonController extends Controller
         //dd($package);
     }
 
-    public function packageUpdated(PackageCategory $packageCategory){
+    public function packageUpdated($packageCategory){
 
-        $packages = Package::where('status', 1)->get();
-        
+        $packages = PackageCategory::with('packages')->where('slug',$packageCategory)->first();
+        return view('package_updated', compact('packages'));
 
-        return view('package_updated', compact('packages','packageCategory'));
 
-        
     }
 
-  
+
 
 }

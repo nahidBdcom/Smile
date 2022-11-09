@@ -54,7 +54,7 @@ Route::post('/test_digits_between', [TestController::class, 'digitsBetweenPost']
 
 
 Route::group(['prefix' => 'admin'], function () {
-    
+
     Voyager::routes();
 
 });
