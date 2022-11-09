@@ -1,11 +1,11 @@
-<header class="header navbar  fixed-top mz-sm-none nav-scl">
+<header class="{{Route::currentRouteName()=='home' ? 'header navbar fixed-top mz-sm-none nav-scl' : 'fixed-top mz-sm-none transparent-header-lg-faq'}}">
     <div class="header-top">
        <div class="menu-area">
           <div class="container">
              <div class="row align-items-center ">
                 <div class="col-lg-2">
                    <div class="logo">
-                      <a href="index.html">
+                      <a href="{{ url("/") }}">
                          <img src="{{asset('/storage/'.setting('site.logo'))}}" class="img-fluid" alt="">
                       </a>
                    </div>

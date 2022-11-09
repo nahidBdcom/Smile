@@ -25,7 +25,7 @@
 
 
 @section('content')
-    {{-- <div class="container-fluid smile-content-title d-flex align-items-center justify-content-center">
+    <div class="container-fluid smile-content-title d-flex align-items-center justify-content-center">
         <div class="row">
                 <div class="col-12">{{ $package["title"] }}</div>
         </div>
@@ -58,7 +58,7 @@
     </div>
 
 
-
+    
     <div class="std_pack_content">
         <div class="container">
             <div class="row">
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
             
 
             @include('partials.features_section_partial')

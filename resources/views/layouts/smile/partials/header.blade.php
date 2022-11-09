@@ -33,7 +33,7 @@
                      <div class="row align-items-center ">
                         <div class="col-lg-2">
                            <div class="logo">
-                              <a href="index.html">
+                              <a href="{{ url("/") }}">
                                  <img src="{{asset('/storage/'.setting('site.logo'))}}" class="img-fluid" alt="">
                               </a>
                            </div>

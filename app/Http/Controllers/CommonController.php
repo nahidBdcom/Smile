@@ -176,6 +176,16 @@ class CommonController extends Controller
         //dd($package);
     }
 
+    public function packageUpdated(PackageCategory $packageCategory){
+
+        $packages = Package::where('status', 1)->get();
+        
+
+        return view('package_updated', compact('packages','packageCategory'));
+
+        
+    }
+
   
 
 }

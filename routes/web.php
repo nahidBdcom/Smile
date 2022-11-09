@@ -24,11 +24,14 @@ use App\Http\Controllers\ConnectivityController;
 |
 */
 
+
 Route::get('/', [CommonController::class, 'home'])->name('home');
 
 Route::post('/custom_solution_request', [CommonController::class, 'getusersysteminfo'])->name('homePost');
 
-Route::get('/package/{package:slug}', [CommonController::class, 'packageDetails'])->name('package_details');
+// Route::get('/package/{package:slug}', [CommonController::class, 'packageDetails'])->name('package_details');
+
+Route::get('/package/{packageCategory:slug}', [CommonController::class, 'packageUpdated'])->name('package_updated');
 
 Route::get('/helpdesk', [CommonController::class, 'helpdesk'])->name('helpdesk');
 Route::post('/helpdesk', [CommonController::class, 'sendComplain'])->name('sendComplainPost');
