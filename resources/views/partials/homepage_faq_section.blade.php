@@ -27,7 +27,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card">
+                {{-- <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -70,7 +70,7 @@
                      </div>
                    </div>
                  </div>
-              </div>
+              </div> --}}
 
           </div>
 
