@@ -17,6 +17,7 @@
         @include('layouts.smile.partials.style')
 
         @yield('additional-style')
+        @yield('additional-style-reviews')
 
     </head>
     <body>
@@ -36,17 +37,17 @@
         @include('layouts.smile.partials.javascript')
 
         @yield('additional-javascripts')
+        @yield('additional-javascripts-reviews')
         <!-- Javascript End -->
-        
-        
+
+
     </body>
 </html>
 
 
 
-      
-      
-      
-     
-   
-  
+
+
+
+
+
