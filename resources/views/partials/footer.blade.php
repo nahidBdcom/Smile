@@ -29,30 +29,7 @@
              <div class="col-sm-6 lg-hide-2 or-sm-3 ftc">
                 <p class="footer-social-below">Social Media</p>
                 <div class="footer-menu-social">
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x fa-3x"></i>
-                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
+                   @include('partials.social_media_icons')
                 </div>
              </div>
 
@@ -69,46 +46,13 @@
                 <div class="col-lg-3">
                    <p class="footer-social-below footer-social-below-2">Social Media</p>
                    <div class="footer-menu-social-2">
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x fa-3x"></i>
-                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
+                      
+                      @include('partials.social_media_icons')
                    </div>
                 </div>
-                <div class="col-lg-3 foot-g">
-                   <ul>
-                     {{menu('footer', 'menus.footer')}}
-                   </ul>
-                </div>
-                {{-- <div class="col-lg-3 foot-g">
-                   <ul>
-                      <li>
-                         <a href="terms.html">Terms of Uses</a>
-                      </li>
 
-                      
-                   </ul>
-                </div> --}}
+                {{menu('footer', 'menus.footer')}}
+                
                 <div class="col-lg-3 foot-g">
                    <p class="footer-copy"> © 2022 <a href="https://www.bdcom.com" style="color:#4D4D4D" target="_blank">BDCOM Online Ltd.</a> All rights reserved. </p>
                 </div>

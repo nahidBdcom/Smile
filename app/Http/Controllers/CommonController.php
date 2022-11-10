@@ -12,10 +12,12 @@ use App\Models\Package;
 use App\Models\Category;
 use App\Models\Customer;
 
+use App\Models\District;
 use App\Models\Slideshow;
 use App\Models\ContentFaq;
 use App\Models\PackageFaq;
 use App\Models\ProblemType;
+use App\Models\SocialMedia;
 use App\Models\ServiceValue;
 use Illuminate\Http\Request;
 use App\Models\CustomerReview;
@@ -28,7 +30,6 @@ use App\Helpers\SmileFunctionHelper;
 use App\Http\Controllers\Controller;
 use App\Helpers\UserSystemInfoHelper;
 use App\Models\ConnectivityApplication;
-use App\Models\District;
 use App\Models\SolutionRequirementType;
 
 
@@ -51,10 +52,12 @@ class CommonController extends Controller
         $requirementTypes = SolutionRequirementType::where('status', 1)->orderBy('order')->get();
         $districts = District::select('id','name')->where('status',1)->orderBy('order','ASC')->get();
         $internetCoverages = InternetCoverage::select('id','title as text','district_id')->where('status', 1)->orderBy('district_id')->orderBy('title')->get();
+        $socialMedias = SocialMedia::orderBy('title')->get();
+        $faqs = ContentFaq::where('content_id', 1)->where('status', 1)->orderBy('order')->get();
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory','districts','internetCoverages'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory','districts','internetCoverages','socialMedias','faqs'));
     }
 
     public function about()
