@@ -5,11 +5,11 @@
              <div class="col-sm-12  col-lg-6 c_br">
                 <div class="section-8-wrapper-first pl-160 pr-160">
                    <div class="rect-icon">
-                      <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
+                      <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
                    </div>
                    <div class="section-8-content">
-                      <h5>Let Us Call You</h5>
-                      <p>Leave your name and phone number below, our team will call you immediately</p>
+                      <h5>{!! setting('site.contact_form_title') !!}</h5>
+                      <p>{!! setting('site.contact_form_description') !!}</p>
                    </div>
                    <form action="#" name="contact_form">
                       <input name="first_name" type="text" required placeholder="Name" />
@@ -28,14 +28,14 @@
                 <div class="section-8-wrapper-2nd">
                    <div class="sml-email-info">
                       <div class="rect-icon">
-                         <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
+                         <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
                       </div>
                       <div class="section-8-content">
-                         <h5 class="h5"><a href="tel:+09666666666">09666 333 555</a></h5>
-                         <h5 class="h5"><a href="mailto:helpdesk@smile.com.bd">helpdesk@smile.com.bd</a></h5>
+                         <h5 class="h5"><a href="tel:+09666666666">{!! setting('site.footer_contact_number') !!}</a></h5>
+                         <h5 class="h5"><a href="mailto:helpdesk@smile.com.bd">{!! setting('site.footer_email_address') !!}</a></h5>
                       </div>
                    </div>
-                   <img src="{{asset('assets/img/contact-bg.png')}}" class="img-fluid" alt="">
+                   <img src="{{asset('/storage/'.setting('site.contact_form_image'))}}" class="img-fluid" alt="">
                 </div>
              </div>
           </div>

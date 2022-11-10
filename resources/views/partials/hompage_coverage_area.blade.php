@@ -5,9 +5,9 @@
              <div class="row">
                 <div class="col-lg-12">
                    <div class="section-6-wrapper">
-                      <h2>Coverage Area</h2>
-                      <img src="{{asset('assets/img/Rectangle-map.png')}}" class="img-fluid">
-                      <p>At present Smile Broadband is available at 18 district cities. Uses the list below to find if we have coverage in your area. First select the district and then the area. If you don’t find your district or area in the list, it means we might not have coverage yet in that particular area.</p>
+                      <h2>{!! setting('site.coverage_area_title') !!}</h2>
+                      <img src="{{asset('/storage/'.setting('site.coverage_area_logo'))}}" class="img-fluid">
+                      <p>{!! setting('site.coverage_area_description') !!}</p>
 
 
 

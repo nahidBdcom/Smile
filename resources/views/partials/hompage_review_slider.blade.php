@@ -2,8 +2,8 @@
     <div class="container">
        <div class="row align-items-end">
           <div class="col-lg-7 col-md-6">
-             <h3>User Review</h3>
-             <p class="sml-filter-1">It’s easy for anyone to post a comment on social media to spread disinformation. Here you can find the authentic feedbacks from the real users regarding their experience on Smile Broadband.</p>
+             <h3>{!! setting('site.user_review_title') !!}</h3>
+             <p class="sml-filter-1">{!! setting('site.user_review_description') !!}</p>
           </div>
           <div class="col-lg-5 col-md-6 text-end">
              <p class="sml-filter">Filter</p>
