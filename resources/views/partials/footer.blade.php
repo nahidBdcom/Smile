@@ -9,7 +9,7 @@
                       <a href="tel:+09666666666"> {!! setting('site.footer_contact_number') !!}</a>
                    </li>
                    <li>
-                      <a href="mailto:helpdesk@smile.com.bd">helpdesk@smile.com.bd</a>
+                      <a href="mailto:helpdesk@smile.com.bd">{!! setting('site.footer_email_address') !!}</a>
                    </li>
                 </ul>
                 <div class="info-text">

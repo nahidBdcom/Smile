@@ -45,11 +45,12 @@ class CommonController extends Controller
         $slideshows = Slideshow::where('status', 1)->orderBy('order')->get();
         $serviceValues = ServiceValue::where('status', 1)->orderBy('order')->get();
         $packages = Package::where('status', 1)->where('show_in_honepage',1)->orderBy('order')->get();
+        $packageCategory= PackageCategory::where('show_in_homepage', 1)->get();
         $requirementTypes = SolutionRequirementType::where('status', 1)->orderBy('order')->get();
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory'));
     }
 
     public function about()
