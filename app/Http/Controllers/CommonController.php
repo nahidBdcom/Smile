@@ -22,11 +22,13 @@ use App\Models\CustomerReview;
 use App\Models\NetworkCoverage;
 use App\Models\PackageCategory;
 use App\Models\SolutionRequest;
+use App\Models\InternetCoverage;
 use Illuminate\Support\Facade\DB;
 use App\Helpers\SmileFunctionHelper;
 use App\Http\Controllers\Controller;
 use App\Helpers\UserSystemInfoHelper;
 use App\Models\ConnectivityApplication;
+use App\Models\District;
 use App\Models\SolutionRequirementType;
 
 
@@ -47,10 +49,12 @@ class CommonController extends Controller
         $packages = Package::where('status', 1)->where('show_in_honepage',1)->orderBy('order')->get();
         $packageCategory= PackageCategory::where('show_in_homepage', 1)->get();
         $requirementTypes = SolutionRequirementType::where('status', 1)->orderBy('order')->get();
+        $districts = District::select('id','name')->where('status',1)->orderBy('order','ASC')->get();
+        $internetCoverages = InternetCoverage::select('id','title as text','district_id')->where('status', 1)->orderBy('district_id')->orderBy('title')->get();
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory','districts','internetCoverages'));
     }
 
     public function about()
