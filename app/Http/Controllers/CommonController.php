@@ -12,10 +12,12 @@ use App\Models\Package;
 use App\Models\Category;
 use App\Models\Customer;
 
+use App\Models\District;
 use App\Models\Slideshow;
 use App\Models\ContentFaq;
 use App\Models\PackageFaq;
 use App\Models\ProblemType;
+use App\Models\SocialMedia;
 use App\Models\ServiceValue;
 use Illuminate\Http\Request;
 use App\Models\CustomerReview;
@@ -28,7 +30,6 @@ use App\Helpers\SmileFunctionHelper;
 use App\Http\Controllers\Controller;
 use App\Helpers\UserSystemInfoHelper;
 use App\Models\ConnectivityApplication;
-use App\Models\District;
 use App\Models\SolutionRequirementType;
 
 
@@ -51,10 +52,12 @@ class CommonController extends Controller
         $requirementTypes = SolutionRequirementType::where('status', 1)->orderBy('order')->get();
         $districts = District::select('id','name')->where('status',1)->orderBy('order','ASC')->get();
         $internetCoverages = InternetCoverage::select('id','title as text','district_id')->where('status', 1)->orderBy('district_id')->orderBy('title')->get();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        $faqs = ContentFaq::where('content_id', 1)->where('status', 1)->orderBy('order')->get();
         //dd($slideshows);
 
 
-       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory','districts','internetCoverages'));
+       return view('home', compact('homeContent','slideshows','serviceValues','packages','requirementTypes','customerReviews', 'packageCategory','districts','internetCoverages','socialMedias','faqs'));
     }
 
     public function about()
@@ -193,6 +196,32 @@ class CommonController extends Controller
 
     }
 
+    public function term(){
+        $mainContent = Content::where('slug', "terms-of-uses")->where('status', 1)->firstOrFail();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        return view ('terms_of_use', compact('mainContent', 'socialMedias'));
+    }
+    
+    
+    public function privacy(){
+        $mainContent = Content::where('slug', "privacy-policy")->where('status', 1)->firstOrFail();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        return view ('privacy_policy', compact('mainContent', 'socialMedias'));
+    }
+    
 
+    public function bill(){
+        $mainContent = Content::where('slug', "bill-payment-guide")->where('status', 1)->firstOrFail();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        return view ('bill_payment_guide', compact('mainContent', 'socialMedias'));
+    }
+
+    
+
+    public function media(){
+        $mainContent = Content::where('slug', "media-center")->where('status', 1)->firstOrFail();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        return view ('media_center', compact('mainContent', 'socialMedias'));
+    }
 
 }

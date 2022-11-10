@@ -19,26 +19,9 @@
              <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-2">
                 <h5 class="footer-title ftc">Collections</h5>
                 <ul>
-                   <li>
-                      <a href="bill-payment-guide.html">Bill Payment Guide</a>
-                   </li>
-                   <li>
-                      <a href="connectivity-form.html">Connectivity Form</a>
-                   </li>
-                   <li>
-                      <a href="media.html">Media Center</a>
-                   </li>
-                   <li>
-                      <a href="user-review.html">Reviews</a>
-                   </li>
+                  
 
-                   <li class="lg-hide-2">
-                      <a href="terms.html">Terms of Uses</a>
-                   </li>
-
-                   <li  class="lg-hide-2">
-                      <a href="privacy.html">Privacy Policy</a>
-                   </li>
+                   {{menu('footer_collection')}}
 
                 </ul>
              </div>
@@ -46,30 +29,7 @@
              <div class="col-sm-6 lg-hide-2 or-sm-3 ftc">
                 <p class="footer-social-below">Social Media</p>
                 <div class="footer-menu-social">
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x fa-3x"></i>
-                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-                   <a href="#">
-                      <span class="fa-stack fa-lg">
-                         <i class="fa fa-square fa-stack-2x"></i>
-                         <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
+                   @include('partials.social_media_icons')
                 </div>
              </div>
 
@@ -86,46 +46,13 @@
                 <div class="col-lg-3">
                    <p class="footer-social-below footer-social-below-2">Social Media</p>
                    <div class="footer-menu-social-2">
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x fa-3x"></i>
-                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
-                      <a href="#">
-                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                         </span>
-                      </a>
+                      
+                      @include('partials.social_media_icons')
                    </div>
                 </div>
-                <div class="col-lg-3 foot-g">
-                   <ul>
-                      <li>
-                         <a href="privacy.html">Privacy Policy</a>
-                      </li>
-                   </ul>
-                </div>
-                <div class="col-lg-3 foot-g">
-                   <ul>
-                      <li>
-                         <a href="terms.html">Terms of Uses</a>
-                      </li>
-                   </ul>
-                </div>
+
+                {{menu('footer', 'menus.footer')}}
+                
                 <div class="col-lg-3 foot-g">
                    <p class="footer-copy"> © 2022 <a href="https://www.bdcom.com" style="color:#4D4D4D" target="_blank">BDCOM Online Ltd.</a> All rights reserved. </p>
                 </div>
