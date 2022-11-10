@@ -26,7 +26,7 @@ class District extends Model
     /**
      * Return the Highest Order District.
      *
-     * 
+     *
      *
      * @return number Order number
      */
@@ -42,5 +42,10 @@ class District extends Model
         }
 
         return $order;
+    }
+
+    public function internetCoverages()
+    {
+        return $this->hasMany(InternetCoverage::class,'district_id','id');
     }
 }
