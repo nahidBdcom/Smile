@@ -1,16 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use TCG\Voyager\Events\Routing;
-use TCG\Voyager\Events\RoutingAdmin;
-use TCG\Voyager\Events\RoutingAdminAfter;
-use TCG\Voyager\Events\RoutingAfter;
 use TCG\Voyager\Facades\Voyager;
-use App\Http\Controllers\UserController;
+use TCG\Voyager\Events\RoutingAdmin;
+use TCG\Voyager\Events\RoutingAfter;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
+use TCG\Voyager\Events\RoutingAdminAfter;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AjaxCallController;
 use App\Http\Controllers\ConnectivityController;
 
 /*
@@ -51,6 +52,8 @@ Route::post('/connectivity_request', [ConnectivityController::class, 'storeUserC
 Route::get('/test', [TestController::class, 'show'])->name('test');
 Route::get('/test_digits_between', [TestController::class, 'digitsBetween'])->name('DigitsBetween');
 Route::post('/test_digits_between', [TestController::class, 'digitsBetweenPost'])->name('DigitsBetweenPost');
+
+Route::post('/user_location_rating_wise', [AjaxCallController::class, 'user_location_rating_wise'])->name('user_location_rating_wise');
 
 
 Route::group(['prefix' => 'admin'], function () {
