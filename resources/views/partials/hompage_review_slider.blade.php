@@ -135,7 +135,7 @@
           </div>
        </div>
        </div>
-       <div class="container">
+      <div class="container">
        <div class="row test-slider-active">
          @foreach ($customerReviews as $customerReview)
          <div class="col-lg-3 col-sm-12">

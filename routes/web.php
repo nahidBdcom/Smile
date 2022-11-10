@@ -53,6 +53,15 @@ Route::get('/test_digits_between', [TestController::class, 'digitsBetween'])->na
 Route::post('/test_digits_between', [TestController::class, 'digitsBetweenPost'])->name('DigitsBetweenPost');
 
 
+Route::get('/terms', [CommonController::class, 'term'])->name('terms_of_use');
+
+Route::get('/privacies', [CommonController::class, 'privacy'])->name('privacy_policy');
+
+Route::get('/bill', [CommonController::class, 'bill'])->name('bill_payment_guide');
+
+Route::get('/media', [CommonController::class, 'media'])->name('media_center');
+
+
 Route::group(['prefix' => 'admin'], function () {
 
     Voyager::routes();
