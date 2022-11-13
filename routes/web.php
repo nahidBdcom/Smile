@@ -53,9 +53,6 @@ Route::get('/test', [TestController::class, 'show'])->name('test');
 Route::get('/test_digits_between', [TestController::class, 'digitsBetween'])->name('DigitsBetween');
 Route::post('/test_digits_between', [TestController::class, 'digitsBetweenPost'])->name('DigitsBetweenPost');
 
-Route::post('/user_location_rating_wise', [AjaxCallController::class, 'user_location_rating_wise'])->name('user_location_rating_wise');
-
-
 Route::get('/terms', [CommonController::class, 'term'])->name('terms_of_use');
 
 Route::get('/privacies', [CommonController::class, 'privacy'])->name('privacy_policy');
@@ -65,6 +62,13 @@ Route::get('/bill', [CommonController::class, 'bill'])->name('bill_payment_guide
 Route::get('/media', [CommonController::class, 'media'])->name('media_center');
 
 Route::get('/about', [CommonController::class, 'aboutUs'])->name('about');
+
+//=====================Route for FAQs======================
+Route::get('/faqs', [CommonController::class, 'faqs'])->name('faqs');
+
+//=======================Ajax Routes=======================
+Route::post('/user_location_rating_wise', [AjaxCallController::class, 'user_location_rating_wise'])->name('user_location_rating_wise');
+Route::post('/contents/faqs', [AjaxCallController::class, 'contents_faqs'])->name('contents.faqs');
 
 
 Route::group(['prefix' => 'admin'], function () {

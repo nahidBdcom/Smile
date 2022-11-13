@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
+use App\Models\ContentFaq;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use App\Models\CustomerReview;
 
@@ -19,5 +22,17 @@ class AjaxCallController extends Controller
         ->get();
 
         return view('partials.hompage_review_slider_sub',compact('customerReviews'));
+    }
+
+    public function contents_faqs(Request $request)
+    {
+        $faqs = ContentFaq::select('*')
+                ->when($request->post_data['content_id'], function($query) use ($request){
+                    $query->where('content_id',$request->post_data['content_id']);
+                })
+                ->inRandomOrder()
+                ->limit(10)
+                ->get();
+        return view('faqs_ajax_call', compact('faqs'));
     }
 }
