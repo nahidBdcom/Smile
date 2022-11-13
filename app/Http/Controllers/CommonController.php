@@ -225,4 +225,23 @@ class CommonController extends Controller
         return view ('media_center', compact('mainContent', 'socialMedias'));
     }
 
+
+    public function aboutUs(){
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        $story = Content::where('slug', "about-story")->where('status',1)->firstOrFail();
+        $vision = Content::where('slug',"our-vision")-> where('status',1)->firstOrFail();
+        $mission = Content::where('slug',"our-mission")->where('status',1)->firstOrFail();
+
+        return view('about', compact('socialMedias', 'story', 'vision', 'mission'));
+
+
+    }
+
+
+    public function faqs(){
+        $faq = Content::where('slug', '');
+
+        return view('faqs', compact(''));
+    }
+
 }

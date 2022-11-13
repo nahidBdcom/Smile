@@ -64,6 +64,8 @@ Route::get('/bill', [CommonController::class, 'bill'])->name('bill_payment_guide
 
 Route::get('/media', [CommonController::class, 'media'])->name('media_center');
 
+Route::get('/about', [CommonController::class, 'aboutUs'])->name('about');
+
 
 Route::group(['prefix' => 'admin'], function () {
 
