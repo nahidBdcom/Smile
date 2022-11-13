@@ -30,6 +30,7 @@ class AjaxCallController extends Controller
                 ->when($request->post_data['content_id'], function($query) use ($request){
                     $query->where('content_id',$request->post_data['content_id']);
                 })
+                ->where('status',1)
                 ->inRandomOrder()
                 ->limit(10)
                 ->get();

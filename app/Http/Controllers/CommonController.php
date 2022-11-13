@@ -247,9 +247,15 @@ class CommonController extends Controller
 
 
     public function faqs(){
-        $contents = Content::whereIn('slug',['/','bill-payment-guide','service-and-support','frequently-ask-questions'])->get();
+        $contents = Content::whereIn('slug',['/','bill-payment-guide','service-and-support','frequently-ask-questions'])
+        ->where('status',1)
+        ->get();
 
-        $faqs = ContentFaq::whereIn('content_id',$contents->pluck('id'))->inRandomOrder()->limit(10)->get();
+        $faqs = ContentFaq::whereIn('content_id',$contents->pluck('id'))
+        ->where('status',1)
+        ->inRandomOrder()
+        ->limit(10)
+        ->get();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         return view('faqs', compact('contents','socialMedias','faqs'));
     }
