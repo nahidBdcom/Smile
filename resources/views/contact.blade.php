@@ -24,7 +24,7 @@
 @endsection     
 
 @section('content')
-        <div class="container-fluid smile-content-title d-flex align-items-center justify-content-center">
+        {{-- <div class="container-fluid smile-content-title d-flex align-items-center justify-content-center">
                 <div class="row">
                         <div class="col-12">{{ $mainContent["title"] }}</div>
                 </div>
@@ -51,5 +51,27 @@
                         </div>        
                         @endforeach
                 </div>
-        </div>
+        </div> --}}
+
+        <div class="breadcrumb_area">
+                <div class="container">
+                   <div class="row">
+                      <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                         </ol>
+                      </nav>
+                   </div>
+                </div>
+             </div>
+
+        {{-- @include("partials.homepage_contact_form") --}}
+         
+        @include("partials.contact_info")
+        
+        @include("partials.mobile_contact_info")
+
+        @include("partials.dhaka_offices")
+
 @endsection      

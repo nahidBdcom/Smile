@@ -17,13 +17,10 @@
                             <span class="pk-7">{!! $package->features_2 !!}</span>
                             <div class="moz-value">
                                 <span class="pk-8">{!! $package->features !!}</span>
-                                {{--  <span class="pk-8">BDIX 30 Mbps</span>
-                                <span class="pk-8">Fiber Optic Connection</span>
-                                <span class="pk-8">No Data-Cap & FUP</span>
-                                <span class="pk-8">24/7 HelpDesk Support</span>  --}}
+                               
                             </div>
                             <div class="pk-btn">
-                                <a class="btn" href="connectivity-form.html">
+                                <a class="btn" href="{{route('connectivity')}}">
                                 Get Connectivity
                                 </a>
                             </div>

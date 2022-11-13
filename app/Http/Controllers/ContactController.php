@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Validator;
+use App\Models\Content;
+use App\Models\ContentFaq;
 //use Illuminate\Foundation\Http\FormRequest;
 
 //use Illuminate\Support\Facade\DB;
 
-use App\Helpers\UserSystemInfoHelper;
-
-use App\Models\Content;
-use App\Models\ContentFaq;
 use App\Models\ZoneOffice;
+
+use App\Models\SocialMedia;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Helpers\UserSystemInfoHelper;
 use App\Models\GetInformationRequest;
 
 class ContactController extends Controller
@@ -21,11 +22,12 @@ class ContactController extends Controller
     public function index(){
         $mainContent = Content::where('slug', "contact")->where('status', 1)->firstOrFail();
         $zoneOffices = ZoneOffice::where('status', 1)->orderBy('order')->get();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         //$mainFAQs = ;
         //dd($mainContent);
 
 
-        return view('contact', compact('mainContent','zoneOffices'));
+        return view('contact', compact('mainContent','zoneOffices', 'socialMedias'));
     }
 
     public function getInfoRequest(Request $request)

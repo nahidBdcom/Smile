@@ -21,13 +21,13 @@
                             </a>
                             <div id="myDropdown3" class="dropdown-content dropdown-content-dis-1 ">
                                <input type="text" placeholder="Search District" id="myInput3" onkeyup="filterFunction()">
-                               <a href="#">Dhaka</a>
+                               {{-- <a href="#">Dhaka</a>
                                <a href="#">Khulna</a>
                                <a href="#">Cumilla</a>
                                <a href="#">Kushtia</a>
                                <a href="#">Barishal</a>
                                <a href="#">Vula</a>
-                               <a href="#">Feni</a>
+                               <a href="#">Feni</a> --}}
                             </div>
                          </div>
 
@@ -38,13 +38,13 @@
                             </a>
                             <div id="myDropdown2" class="dropdown-content dropdown-content-dis-2 ">
                                <input type="text" placeholder="Search Area" id="myInput2" onkeyup="filterFunction()">
-                               <a href="#">Dhaka</a>
+                               {{-- <a href="#">Dhaka</a>
                                <a href="#">Khulna</a>
                                <a href="#">Cumilla</a>
                                <a href="#">Kushtia</a>
                                <a href="#">Barishal</a>
                                <a href="#">Vula</a>
-                               <a href="#">Feni</a>
+                               <a href="#">Feni</a> --}}
                             </div>
                          </div>
                       </form>

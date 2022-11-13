@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Validator;
+use App\Models\Content;
+use App\Models\Package;
 //use Illuminate\Foundation\Http\FormRequest;
 
 //use Illuminate\Support\Facade\DB;
 
-use App\Helpers\UserSystemInfoHelper;
-use App\Helpers\SmileFunctionHelper;
-
-use App\Models\Content;
-use App\Models\ContentFaq;
 use App\Models\District;
-use App\Models\Package;
+use App\Models\ContentFaq;
+
+use App\Models\SocialMedia;
+use Illuminate\Http\Request;
 use App\Models\InternetCoverage;
+use App\Helpers\SmileFunctionHelper;
+use App\Http\Controllers\Controller;
+use App\Helpers\UserSystemInfoHelper;
 use App\Models\GetInformationRequest;
 use App\Models\ConnectivityApplication;
 
@@ -28,11 +29,12 @@ class ConnectivityController extends Controller
         $faqs = ContentFaq::where('content_id', $mainContent->id)->where('status', 1)->orderBy('order')->get();
         $districts = District::where('status', 1)->orderBy('name')->get();
         $packages = Package::where('status', 1)->orderBy('order')->get();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         //$mainFAQs = ;
         //dd($mainContent);
 
 
-        return view('connectivity', compact('mainContent','faqs','districts','packages'));
+        return view('connectivity', compact('mainContent','faqs','districts','packages', 'socialMedias'));
     }
 
     public function districtLocality(Request $request){

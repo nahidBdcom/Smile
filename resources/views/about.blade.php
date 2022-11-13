@@ -10,7 +10,7 @@
              <nav aria-label="breadcrumb" class="sm-hide">
                 <ol class="breadcrumb">
                    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                   <li class="breadcrumb-item active" aria-current="page">About</li>
+                   <li class="breadcrumb-item active" aria-current="page">{{$story->title}}</li>
                 </ol>
              </nav>
              {{-- <div class="our_mission pt-125 pb-250">

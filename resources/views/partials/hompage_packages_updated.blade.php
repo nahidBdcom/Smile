@@ -31,7 +31,7 @@
                   <span class="pk-8">{!! $package->features !!}</span>
                </div>
                <div class="pk-btn">
-                  <a class="btn" href="connectivity-form.html"> Get Connectivity </a>
+                  <a class="btn" href="{{route('connectivity')}}"> Get Connectivity </a>
                </div>
             </div>
          </div>
