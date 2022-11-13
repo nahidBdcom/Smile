@@ -202,14 +202,14 @@ class CommonController extends Controller
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         return view ('terms_of_use', compact('mainContent', 'socialMedias'));
     }
-    
-    
+
+
     public function privacy(){
         $mainContent = Content::where('slug', "privacy-policy")->where('status', 1)->firstOrFail();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         return view ('privacy_policy', compact('mainContent', 'socialMedias'));
     }
-    
+
 
     public function bill(){
         $mainContent = Content::where('slug', "bill-payment-guide")->where('status', 1)->firstOrFail();
@@ -217,7 +217,7 @@ class CommonController extends Controller
         return view ('bill_payment_guide', compact('mainContent', 'socialMedias'));
     }
 
-    
+
 
     public function media(){
         $mainContent = Content::where('slug', "media-center")->where('status', 1)->firstOrFail();
@@ -239,9 +239,11 @@ class CommonController extends Controller
 
 
     public function faqs(){
-        $faq = Content::where('slug', '');
+        $contents = Content::whereIn('slug',['/','bill-payment-guide','service-and-support','frequently-ask-questions'])->get();
 
-        return view('faqs', compact(''));
+        $faqs = ContentFaq::whereIn('content_id',$contents->pluck('id'))->inRandomOrder()->limit(10)->get();
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        return view('faqs', compact('contents','socialMedias','faqs'));
     }
 
 }
