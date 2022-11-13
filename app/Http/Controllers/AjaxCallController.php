@@ -31,7 +31,7 @@ class AjaxCallController extends Controller
                     $query->where('content_id',$request->post_data['content_id']);
                 })
                 ->where('status',1)
-                ->inRandomOrder()
+                ->orderBy('order')
                 ->limit(10)
                 ->get();
         return view('faqs_ajax_call', compact('faqs'));

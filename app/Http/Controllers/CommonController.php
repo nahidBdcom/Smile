@@ -253,7 +253,7 @@ class CommonController extends Controller
 
         $faqs = ContentFaq::whereIn('content_id',$contents->pluck('id'))
         ->where('status',1)
-        ->inRandomOrder()
+        ->orderBy('order')
         ->limit(10)
         ->get();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
