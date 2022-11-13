@@ -52,11 +52,7 @@
         <!-- Connectivity Request Form Block End -->
         @endif
 
-        {{-- @if($faqs->count())
-        <!-- FAQ 12 Block -->
-        @include('partials.faqs_4',['title' => "FREQUENTLY ASKED QUESTIONS"])
-        <!-- FAQ 12 Block End -->
-        @endif --}}
+       
 @endsection
 
 @section('additional-javascripts')

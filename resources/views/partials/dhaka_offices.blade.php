@@ -24,11 +24,10 @@
                 </div>
                 <div class="sml-branch sml-tag">
                    <h5>Head Office</h5>
-                   <p>JL Bhaban (5th floor)<br>
-                      House # 1, Road # 1, Gulshan-1<br>
-                      Gulshan Avenue, Dhaka - 1212, Bangladesh<br><br>
-                      +8809666 666 666<br>
-                      helpdesk@smile.com.bd
+                   <p> 
+                    {!! setting('site.footer_head_office_address') !!}<br><br>
+                    {!! setting('site.footer_contact_number') !!}<br>
+                    {!! setting('site.footer_email_address') !!}
                    </p>
                 </div>
              </div>
@@ -37,50 +36,18 @@
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.2415958850393!2d90.413803215363!3d23.774409693774686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4adf374867%3A0x24ce624aadf26c73!2z4Kas4Ka_4Kah4Ka_4KaV4KauIOCmheCmqOCmsuCmvuCmh-CmqCDgprLgpr_gpq7gpr_gpp_gp4fgpqE!5e0!3m2!1sbn!2sbd!4v1655880913625!5m2!1sbn!2sbd" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mt-30">
-             <div class="sml-branch sml-branch-bg">
-                <h5>Dhanmondi Office </h5>
-                <p>Jerlina, House-460, <br>
-                   Avenue-5, Road-6, Mirpur <br>
-                   DOHS, Dhaka-1216<br><br>
-                   +8809666 666 666<br>
-                   helpdesk@smile.com.bd
-                </p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mt-30">
-             <div class="sml-branch sml-branch-bg">
-                <h5>Banasree Office </h5>
-                <p>Jerlina, House-460, <br>
-                   Avenue-5, Road-6, Mirpur <br>
-                   DOHS, Dhaka-1216<br><br>
-                   +8809666 666 666<br>
-                   helpdesk@smile.com.bd
-                </p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mt-30">
-             <div class="sml-branch sml-branch-bg">
-                <h5>Uttara Office </h5>
-                <p>Jerlina, House-460, <br>
-                   Avenue-5, Road-6, Mirpur <br>
-                   DOHS, Dhaka-1216<br><br>
-                   +8809666 666 666<br>
-                   helpdesk@smile.com.bd
-                </p>
-             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mt-30">
-             <div class="sml-branch sml-branch-bg">
-                <h5>Mirpur Office </h5>
-                <p>Jerlina, House-460, <br>
-                   Avenue-5, Road-6, Mirpur <br>
-                   DOHS, Dhaka-1216<br><br>
-                   +8809666 666 666<br>
-                   helpdesk@smile.com.bd
-                </p>
-             </div>
-          </div>
+          @foreach ($dhakaOffices as $dhakaOffice)
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-30">
+                    <div class="sml-branch sml-branch-bg">
+                    <h5> {{$dhakaOffice->title}}</h5>
+                    <p>{!! $dhakaOffice->address !!}<br><br>
+                        {{$dhakaOffice->contact_number}}<br>
+                        {{$dhakaOffice->email}}
+                    </p>
+                    </div>
+                </div>             
+          @endforeach
+         
        </div>
     </div>
  </div>

@@ -21,13 +21,15 @@ class ContactController extends Controller
 {
     public function index(){
         $mainContent = Content::where('slug', "contact")->where('status', 1)->firstOrFail();
-        $zoneOffices = ZoneOffice::where('status', 1)->orderBy('order')->get();
+        $zoneOffices = ZoneOffice::leftJoin('districts', 'zone_offices.district_id', 'districts.id')->where('districts.name' ,'!=', 'Dhaka')->orderBy('zone_offices.order')->get();
+        $dhakaOffices = ZoneOffice::leftJoin('districts', 'zone_offices.district_id', 'districts.id')->where('districts.name' , 'Dhaka')->orderBy('zone_offices.order')->get();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         //$mainFAQs = ;
         //dd($mainContent);
+        // dd($dhakaOffices);
 
 
-        return view('contact', compact('mainContent','zoneOffices', 'socialMedias'));
+        return view('contact', compact('mainContent','zoneOffices', 'socialMedias', 'dhakaOffices'));
     }
 
     public function getInfoRequest(Request $request)
