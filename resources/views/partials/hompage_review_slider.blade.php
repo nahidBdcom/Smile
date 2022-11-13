@@ -110,22 +110,68 @@
        $.post(url,{_token:token, data: post_data}, function(response){
 
        }).done(function(response) {
-            //$('.test-slider-active').animate({
-                //right: '200px',
+            $('.test-slider-active').animate({
+                right: '200px',
                 //padding: "0px",
                 //'margin-left':'-10px',
                 //'font-size': "0px"
-            //}, 1000, function() {
+            }, 1000, function() {
 
                 //$('.test-slider-active').remove();
                 //$('.sub-section-rating').html(response);
             //});
            //$('.test-slider-active').css({
                //transition : 'opacity 1s ease-in-out'
-           // });
-            $('.sub-section-rating').empty();
-            //var p = $('.sub-section-rating').bind(response)
-            $('.sub-section-rating').html(response);
+                $('.test-slider-active').slick('unslick');
+                $('.sub-section-rating').empty();
+                //var p = $('.sub-section-rating').bind(response)
+                $('.sub-section-rating').html(response);
+                $('.test-slider-active').slick({
+                    dots: false,
+                    infinite: true,
+                    autoplay: false,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+
+                    centerMode: false,
+                    focusOnSelect: false,
+                    responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        autoplay: true,
+                        dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                        slidesToShow: 1,
+                        autoplay: true,
+                        slidesToScroll: 1,
+                        dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                        slidesToShow: 1,
+                        autoplay: true,
+                        slidesToScroll: 1,
+                        dots: false
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                    ]
+                });
+           });
+
        }).fail(function() {
             console.log("Oops! something went wrong.");
        })
