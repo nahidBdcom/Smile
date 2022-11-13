@@ -1,14 +1,27 @@
 @extends('layouts.smile.master')
 
+@section('additional-style-connectivity-form-css')
+    <link rel="stylesheet" href="{{asset('assets/css/update/select2.min.css')}}">
+    <style>
+        .select2-container--default .select2-selection--single {
+            border: none;
+        }
+
+        .select2-container .select2-selection--single .select2-selection__rendered {
+            padding-left: 30px;
+        }
+    </style>
+@endsection
+
 @section('seo_meta')
 
         <title>{{ $mainContent["seo_titlle"] }}</title>
         <meta name="description" content="{{ $mainContent["meta_description"] }}">
         <meta name="keywords" content="{{ $mainContent["meta_keyword"] }}">
-@endsection     
+@endsection
 
 @section('social_media_meta')
-        
+
         <meta property="og:url"                content="{{url()->current()}}" />
         <meta property="og:title"              content="{{ $mainContent["og_title"] }}" />
         <meta property="og:description"        content="{{ $mainContent["og_description"] }}" />
@@ -21,11 +34,11 @@
         <meta property="twitter:image"         content="{{ asset('storage/'.$mainContent["og_image"]) }}" />
         <meta property="twitter:card"          content="summary" />
 
-@endsection     
+@endsection
 
 @section('extra_meta')
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-@endsection     
+@endsection
 
 
 {{-- @section('additional-style')
@@ -55,48 +68,14 @@
        
 @endsection
 
-@section('additional-javascripts')
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>   
+@section('additional-style-connectivity-form-js')
+    <script src="{{asset('assets/js/update/select2.min.js')}}"></script>
     <script language="javascript">
         $(document).ready(function() {
-            var $districtSelect2 =$('.connectivityDistrictSelect2');
-            var $localitySelect2 =$('.connectivityLocalitySelect2');
-
-            $districtSelect2.select2({
-                placeholder: 'District *',
-                theme: "bootstrap-5",
+            $('.select2').select2({
+                placeholder: "Select",
+                allowClear: true,
             });
-            $localitySelect2.select2({
-                placeholder: 'Area/Locality *',
-                theme: "bootstrap-5",
-            });
-
-            $districtSelect2.on("change", function (e) { 
-                //alert($(districtSelect2).val()); 
-                $localitySelect2.empty();
-                $localitySelect2.prop("disabled", true);
-                $.ajax({
-                    method: "POST",
-                    data: {
-                        "_token": $('meta[name="csrf-token"]').attr('content'),
-                        "district": $districtSelect2.val()
-                    },
-                    url: "{{url("getDistrictLocalityData")}}",
-                    }).done(function( msg ) {
-                    if(msg.error == 0){
-                        if(msg.status == 1){
-                            $localitySelect2.prop("disabled", false);
-                            msg.data.map(function(item) {
-                                var newOption = new Option(item.text, item.id, false, false);
-                                $localitySelect2.append(newOption);
-                            });
-
-                        }
-                           
-                    }else{
-                    }
-                });
-            });  
 
             /*checkbox*/
             $('#connectivity-form-policy').click(function(){
@@ -172,15 +151,15 @@
 
             			}
         		});
-			    
+
 		    }
 
                 }, false)
                 })
             })()
 
-        });          
+        });
 
-                             
+
     </script>
-@endsection      
+@endsection
