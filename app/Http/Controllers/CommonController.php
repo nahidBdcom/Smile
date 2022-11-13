@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Validator;
 use App\Models\Post;
-use App\Models\Content;
+use App\Models\Brand;
 //use Illuminate\Foundation\Http\FormRequest;
 
+use App\Models\Content;
+
 use App\Models\Package;
-
 use App\Models\Category;
-use App\Models\Customer;
 
+use App\Models\Customer;
 use App\Models\District;
 use App\Models\Slideshow;
 use App\Models\ContentFaq;
@@ -20,6 +21,7 @@ use App\Models\ProblemType;
 use App\Models\SocialMedia;
 use App\Models\ServiceValue;
 use Illuminate\Http\Request;
+use App\Models\BrandCategory;
 use App\Models\CustomerReview;
 use App\Models\NetworkCoverage;
 use App\Models\PackageCategory;
@@ -231,8 +233,14 @@ class CommonController extends Controller
         $story = Content::where('slug', "about-story")->where('status',1)->firstOrFail();
         $vision = Content::where('slug',"our-vision")-> where('status',1)->firstOrFail();
         $mission = Content::where('slug',"our-mission")->where('status',1)->firstOrFail();
+        $trust = Content::where('slug',"brands-who-trusts-us")->where('status', 1)->firstOrFail();
+        $brands = Brand::where('status',1)->orderBy('order')->get();
 
-        return view('about', compact('socialMedias', 'story', 'vision', 'mission'));
+        // dd($brands);
+
+        return view('about', compact('socialMedias', 'story', 'vision', 'mission', 'trust', 'brands'));
+
+
 
 
     }
