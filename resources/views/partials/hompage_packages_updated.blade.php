@@ -16,20 +16,21 @@
                <br>
                <span class="pk-3"><sup>৳</sup> {{ $package->monthly_charges }}</span>
                <span class="pk-4">per month</span>
-               <span class="pk-5">({{$package->vat_declaration}})</span>
+               <span class="pk-5">{{$package->vat_declaration}}</span>
                <hr>
                {{-- <span class="pk-6">Dynamic Real-IP</span>
                <span class="pk-7">Bufferless Facebook & Youtube</span> --}}
                <span class="pk-6">{!! $package->features_1 !!}</span>
                <span class="pk-7">{!! $package->features_2 !!}</span>
-               <div class="moz-value">
-                  {{-- <span class="pk-8">Internet: 25 Mbps</span>
+               {{-- <div class="moz-value">
+                  <span class="pk-8">Internet: 25 Mbps</span>
                   <span class="pk-8">BDIX 30 Mbps</span>
                   <span class="pk-8">Fiber Optic Connection</span>
                   <span class="pk-8">No Data-Cap & FUP</span>
-                  <span class="pk-8">24/7 HelpDesk Support</span> --}}
-                  <span class="pk-8">{!! $package->features !!}</span>
-               </div>
+                  <span class="pk-8">24/7 HelpDesk Support</span>
+                  <span class="pk-8"></span>
+               </div> --}}
+               {!! $package->features !!}
                <div class="pk-btn">
                   <a class="btn" href="{{route('connectivity')}}"> Get Connectivity </a>
                </div>
