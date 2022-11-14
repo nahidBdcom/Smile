@@ -12,6 +12,7 @@
                       <p>{!! setting('site.contact_form_description') !!}</p>
                    </div>
                    <form method="POST" id="contact_form" action="{{url("contact/get_information_request")}}">
+                     {{ csrf_field() }}
                       <input name="info_name" id="name" type="text" required placeholder="Name" />
                       <br>
                       <input name="info_phone" id="phone" type="text" required placeholder="Phone Number" />
