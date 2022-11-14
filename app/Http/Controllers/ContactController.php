@@ -37,21 +37,23 @@ class ContactController extends Controller
         $tmpInput = $request->all();
         $tmpInput['info_name']= trim(strip_tags($request->input('info_name')));
         $tmpInput['info_phone'] = trim(strip_tags($request->input('info_phone')));
-        $tmpInput['info_email'] = trim(strip_tags($request->input('info_email')));
+        // $tmpInput['info_email'] = trim(strip_tags($request->input('info_email')));
         $tmpInput['info_details'] = trim(strip_tags($request->input('info_details')));
         $request->replace($tmpInput);
+
+        // dd($tmpInput);
 
         $rules = [
             'info_name' => ['required', 'max:255'],
             'info_phone' => ['required', 'regex:/^([0-9\+])([0-9\s]*)$/',  'min:8'],
-            'info_email' => ['required', 'email:rfc,dns', 'max:50'],
+            // 'info_email' => ['required', 'email:rfc,dns', 'max:50'],
         ];
 
         $messages = [];
         $attributes =[
             'info_name' => 'Name',
             'info_phone' => 'Phone Number',
-            'info_email' => 'Email Address',
+            // 'info_email' => 'Email Address',
         ];
         $validator =Validator::make($request->all(),$rules, $messages ,$attributes);
 
@@ -60,33 +62,42 @@ class ContactController extends Controller
         }
          else
         {
-            $browser = get_browser(null, true);
+            // $browser = \App\Helpers\UserSystemInfoHelper::get_browsers(null, true);
+
+            // dd($browser);
+            // dd($_SERVER);
 
             $infoRequest = new GetInformationRequest;
             $infoRequest->name = $request->info_name;
             $infoRequest->phone = $request->info_phone;
-            $infoRequest->email = $request->info_email;
-            $infoRequest->details = $request->info_details;
-            $infoRequest->is_human_verified = 0;
-            $infoRequest->remote_addr = UserSystemInfoHelper::get_ip();
-            $infoRequest->remote_port = $_SERVER['REMOTE_PORT'];
-            $infoRequest->request_scheme = $_SERVER['REQUEST_SCHEME'];
-            $infoRequest->request_method = $_SERVER['REQUEST_METHOD'];
-            $infoRequest->platform = $browser['platform'];
-            $infoRequest->browser = $browser['browser'];
-            $infoRequest->browser_maker = $browser['browser_maker'];
-            $infoRequest->browser_version = $browser['version'];
-            $infoRequest->device_type = $browser['device_type'];
-            $infoRequest->device_pointing_method = $browser['device_pointing_method'];
-            $infoRequest->minorver = $browser['minorver'];
-            $infoRequest->ismobiledevice = $browser['ismobiledevice'];
-            $infoRequest->istablet = $browser['istablet'];
-            $infoRequest->crawler = $browser['crawler'];
-            $infoRequest->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
+            // $infoRequest->email = $request->info_email;
+            // $infoRequest->details = $request->info_details;
+            // $infoRequest->is_human_verified = 0;
+            // $infoRequest->remote_addr = UserSystemInfoHelper::get_ip();
+            // $infoRequest->remote_port = $_SERVER['REMOTE_PORT'];
+            // $infoRequest->request_scheme = $_SERVER['REQUEST_SCHEME'];
+            // $infoRequest->request_method = $_SERVER['REQUEST_METHOD'];
+            // $infoRequest->platform = $browser['platform'];
+            // $infoRequest->browser = $browser['browser'];
+            // $infoRequest->browser_maker = $browser['browser_maker'];
+            // $infoRequest->browser_version = $browser['version'];
+            // $infoRequest->device_type = $browser['device_type'];
+            // $infoRequest->device_pointing_method = $browser['device_pointing_method'];
+            // $infoRequest->minorver = $browser['minorver'];
+            // $infoRequest->ismobiledevice = $browser['ismobiledevice'];
+            // $infoRequest->istablet = $browser['istablet'];
+            // $infoRequest->crawler = $browser['crawler'];
+            // $infoRequest->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
             $infoRequest->save();
 
+            // dd($infoRequest);
+
+
+
+
             if (! empty($infoRequest->id)) {
-                return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
+                // return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
+                return redirect('/phone_call')->with('message' , json_encode(['status'=>1, 'msg'=>"Our team will contact you very soon."]));
             }
             else
             {
@@ -94,6 +105,12 @@ class ContactController extends Controller
             }
         }
        
+    }
+
+    public function phoneCall(){
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        
+        return view ('phone_call', compact('socialMedias'));
     }
   
 

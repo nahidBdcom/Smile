@@ -44,6 +44,7 @@ Route::get('/blog/{blog:slug}', [CommonController::class, 'singleBlog'])->name('
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact/get_information_request', [ContactController::class, 'getInfoRequest'])->name('contactUsPost');
+Route::get('/phone_call', [ContactController::class, 'phoneCall'])->name('phone_call');
 
 Route::get('/connectivity', [ConnectivityController::class, 'index'])->name('connectivity');
 Route::post('/getDistrictLocalityData', [ConnectivityController::class, 'districtLocality'])->name('getDistrictLocalityData');

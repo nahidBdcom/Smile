@@ -1,7 +1,7 @@
     <div class="c_form_main cdt">
         <div class="container bg-c">
            <div class="bg-c-1">
-              <form>
+              <form method="POST">
                  <div class="c_form">
                     <h2>Connectivity Form</h2>
                     <p class="dot_ind"><span class="dot_ind_2">*</span>indicates mandatory field</p>
@@ -55,24 +55,6 @@
                                 <option value="{{$district->id}}">{{$district->name}}</option>
                             @endforeach
                         </select>
-                          {{--  <div class="dropdown">
-                             <button onclick="myFunction()" class="dropbtn dropbtn_2">
-                                <span class="dot_ind_2">*</span> District
-                                <svg class="ml-15" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="https://www.w3.org/2000/svg">
-                                   <path d="M14.8038 2.36929C15.1943 1.97877 15.1943 1.3456 14.8038 0.955076C14.4133 0.564552 13.7801 0.564554 13.3896 0.955079L14.8038 2.36929ZM7.56684 8.19205L6.85973 8.89915C7.04727 9.08669 7.30162 9.19205 7.56684 9.19205C7.83206 9.19205 8.08641 9.08669 8.27395 8.89915L7.56684 8.19205ZM1.74408 0.955076C1.35356 0.564552 0.720392 0.564552 0.329868 0.955076C-0.0606559 1.3456 -0.060656 1.97877 0.329868 2.36929L1.74408 0.955076ZM13.3896 0.955079L6.85973 7.48494L8.27395 8.89915L14.8038 2.36929L13.3896 0.955079ZM8.27394 7.48494L1.74408 0.955076L0.329868 2.36929L6.85973 8.89915L8.27394 7.48494Z" fill="#03314B"/>
-                                </svg>
-                             </button>
-                             <div id="myDropdown" class="dropdown-content dropdown-content-dis ">
-                                <input type="text" placeholder="Search District" id="myInput" onkeyup="filterFunction()">
-                                <a href="#">Dhaka</a>
-                                <a href="#">Khulna</a>
-                                <a href="#">Cumilla</a>
-                                <a href="#">Kushtia</a>
-                                <a href="#">Barishal</a>
-                                <a href="#">Vula</a>
-                                <a href="#">Feni</a>
-                             </div>
-                          </div>  --}}
                        </div>
                     </div>
 
@@ -86,12 +68,7 @@
                              @foreach ($packages as $package)
                                 <option value="{{$package->id}}">{{$package->title}}</option>
                              @endforeach
-                             {{-- <option value="">Silver</option>
-                             <option value="canada">Silver Supreme</option>
-                             <option value="usa">Gold</option>
-                             <option value="usa">Daimond</option>
-                             <option value="usa">Ek Desh Ek Rate P1</option>
-                             <option value="usa">Ek Desh Ek Rate P2</option> --}}
+                            
                           </select>
                        </div>
                     </div>

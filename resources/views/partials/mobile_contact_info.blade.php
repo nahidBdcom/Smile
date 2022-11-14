@@ -27,15 +27,13 @@
        <div class="col-sm-12 mobt-30">
           <div class="office_label_content">
              <div class="rect-icon-office">
-                <img src="img/head-office.png" class="img-fluid" alt="">
+                <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
              </div>
              <div class="sml-branch sml-tag">
                 <h5>Head Office</h5>
-                <p>JL Bhaban (5th floor)<br>
-                   House # 1, Road # 1, Gulshan-1<br>
-                   Gulshan Avenue, Dhaka - 1212, Bangladesh<br><br>
-                   +8809666 666 666<br>
-                   helpdesk@smile.com.bd
+                <p>{!! setting('site.footer_head_office_address') !!}<br><br>
+                   {!! setting('site.footer_contact_number') !!}<br>
+                   {!! setting('site.footer_email_address') !!}
                 </p>
              </div>
           </div>
