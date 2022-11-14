@@ -260,4 +260,13 @@ class CommonController extends Controller
         return view('faqs', compact('contents','socialMedias','faqs'));
     }
 
+
+    public function reviews(){
+        $customerReviews = CustomerReview::where('status',1)->paginate(18);
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        $districts = District::select('id','name')->where('status',1)->orderBy('order','ASC')->get();
+
+        return view('reviews', compact('customerReviews', 'socialMedias','districts'));
+    }
+
 }

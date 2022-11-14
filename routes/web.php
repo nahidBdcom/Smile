@@ -53,15 +53,31 @@ Route::get('/test', [TestController::class, 'show'])->name('test');
 Route::get('/test_digits_between', [TestController::class, 'digitsBetween'])->name('DigitsBetween');
 Route::post('/test_digits_between', [TestController::class, 'digitsBetweenPost'])->name('DigitsBetweenPost');
 
+/*Terms of Uses*/
+
 Route::get('/terms', [CommonController::class, 'term'])->name('terms_of_use');
+
+/*Privacy Policy*/
 
 Route::get('/privacies', [CommonController::class, 'privacy'])->name('privacy_policy');
 
+/*Bill Payment Guide*/
+
 Route::get('/bill', [CommonController::class, 'bill'])->name('bill_payment_guide');
+
+/*Media Center*/
 
 Route::get('/media', [CommonController::class, 'media'])->name('media_center');
 
+/*About*/ 
+
 Route::get('/about', [CommonController::class, 'aboutUs'])->name('about');
+
+/*Reviews*/
+
+Route::get('/reviews',[CommonController::class, 'reviews'])->name('reviews');
+
+
 
 //=====================Route for FAQs======================
 Route::get('/faqs', [CommonController::class, 'faqs'])->name('faqs');
