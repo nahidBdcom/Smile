@@ -11,16 +11,18 @@
                       <h5>{!! setting('site.contact_form_title') !!}</h5>
                       <p>{!! setting('site.contact_form_description') !!}</p>
                    </div>
-                   <form action="#" name="contact_form">
-                      <input name="first_name" type="text" required placeholder="Name" />
+                   <form method="POST" id="contact_form" action="{{url("contact/get_information_request")}}">
+                      <input name="info_name" id="name" type="text" required placeholder="Name" />
                       <br>
-                      <input name="last_name" type="text" required placeholder="Phone Number" />
+                      <input name="info_phone" id="phone" type="text" required placeholder="Phone Number" />
                       <br>
-                      <input name="last_name" type="text" required placeholder="Anything in mind?" />
-                      <a class="btn btn-2" href="#"> Submit <svg class="ml-25" width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="https://www.w3.org/2000/svg">
-                            <path d="M1.90039 19.1287L10.4196 10.6093L1.90039 2.09009" stroke="#808080" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>
-                      </a>
+                      <input name="info_details" id="details" type="text" required placeholder="Anything in mind?" />
+                      <button class="btn btn-2" type="submit">
+                        Submit 
+                        <svg class="ml-25" width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="https://www.w3.org/2000/svg">
+                           <path d="M1.90039 19.1287L10.4196 10.6093L1.90039 2.09009" stroke="#808080" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                       </button>
                    </form>
                 </div>
              </div>
