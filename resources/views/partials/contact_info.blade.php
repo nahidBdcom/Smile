@@ -14,8 +14,12 @@
                    <form method="POST" id="contact_form" action="{{url("contact/get_information_request")}}">
                     {{ csrf_field() }}
                       <input name="info_name" id="name" type="text" required placeholder="Name"/>
+                      <div class="invalid-tooltip">Please provide your name.</div>
+                      <span class="text-danger error-text info_name_error"></span>
                       <br>
-                      <input name="info_phone" id="phone" type="text" required placeholder="Phone Number"/>
+                      <input name="info_phone" id="phone" type="text" required placeholder="Phone Number" pattern="[0][1][3-9][0-9]{8}"/>
+                      <div class="invalid-tooltip">Please provide a valid Phone Number.</div>
+                      <span class="text-danger error-text info_phone_error"></span>
                       <br>
                       <input name="info_details" id="details" type="text" required placeholder="Anything in mind?"/>
                       <button class="btn btn-2" type="submit">
