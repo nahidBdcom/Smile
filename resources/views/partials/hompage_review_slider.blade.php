@@ -103,7 +103,8 @@
        let rating = $('.getRating').val();
        let post_data = {
            district : district,
-           rating : rating
+           rating : rating,
+           pagination: false
        }
        let url = "{{route('user_location_rating_wise')}}";
        let token = "{{csrf_token()}}";

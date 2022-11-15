@@ -5,4 +5,4 @@
       <script src="{{asset('assets/js/update/slick.min.js')}}"></script>
       <script src="{{asset('assets/js/update/jquery.meanmenu.min.js')}}"></script>
       <script src="{{asset('assets/js/update/main.js')}}"></script>
-      <script src="{{asset('assets/js/update/district.js')}}"></script>
+      {{--  <script src="{{asset('assets/js/update/district.js')}}"></script>  --}}
