@@ -19,6 +19,7 @@
         @yield('additional-style')
         @yield('additional-style-reviews')
         @yield('additional-style-connectivity-form-css')
+        @yield('additional-userreview-css')
 
     </head>
     <body>
@@ -40,6 +41,7 @@
         @yield('additional-javascripts')
         @yield('additional-javascripts-reviews')
         @yield('additional-style-connectivity-form-js')
+        @yield('additional-userreview-js')
         <!-- Javascript End -->
 
 

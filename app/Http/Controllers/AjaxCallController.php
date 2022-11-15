@@ -19,9 +19,17 @@ class AjaxCallController extends Controller
         ->when($request->data['rating'], function($query) use ($request){
             $query->where('ratings',$request->data['rating'])->where('show_at_home',1);
         })
+        ->when($request->data['pagination'], function($query) use ($request){
+            $query->paginate(10);
+        })
         ->get();
 
-        return view('partials.hompage_review_slider_sub',compact('customerReviews'));
+        if($request->data['pagination']){
+            return view('partials.hompage_review_page_sub',compact('customerReviews'));
+        }else{
+            return view('partials.hompage_review_slider_sub',compact('customerReviews'));
+        }
+
     }
 
     public function contents_faqs(Request $request)
