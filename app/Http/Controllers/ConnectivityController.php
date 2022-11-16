@@ -20,6 +20,7 @@ use App\Http\Controllers\Controller;
 use App\Helpers\UserSystemInfoHelper;
 use App\Models\GetInformationRequest;
 use App\Models\ConnectivityApplication;
+use Illuminate\Support\Facades\Redirect;
 
 
 class ConnectivityController extends Controller
@@ -60,6 +61,7 @@ class ConnectivityController extends Controller
         $tmpInput['phone'] = trim(strip_tags($request->input('phone')));
         $tmpInput['email'] = trim(strip_tags($request->input('email')));
         $tmpInput['address'] = trim(strip_tags($request->input('address')));
+        $tmpInput['promo'] = trim(strip_tags($request->input('promo')));
         $tmpInput['referral'] = trim(strip_tags($request->input('referral')));
         $request->replace($tmpInput);
 
@@ -67,10 +69,11 @@ class ConnectivityController extends Controller
             'name' => ['required', 'max:255'],
             'phone' => ['required', 'regex:/^([0-9\+])([0-9\s]*)$/',  'min:8'],
             'email' => ['required', 'email:rfc,dns', 'max:50'],
+            // 'address' => ['required',  'max:255'],
             'district' => ['required', 'integer', 'min:1'],
-            'locality' => ['required', 'integer', 'min:1'],
+            // 'locality' => ['required', 'integer', 'min:1'],
             'package' => ['required', 'integer', 'min:1'],
-            'policy' => ['accepted'],
+            // 'policy' => ['accepted'],
         ];
 
         $messages = [];
@@ -78,9 +81,9 @@ class ConnectivityController extends Controller
             'name' => 'Name',
             'phone' => 'Phone Number',
             'email' => 'Email Address',
-            'locality' => 'Area/Locality',
+            // 'locality' => 'Area/Locality',
             'package' => 'Desired Package',
-            'policy' => 'Agree with the privacy policy',
+            // 'policy' => 'Agree with the privacy policy',
         ];
         $validator =Validator::make($request->all(),$rules, $messages ,$attributes);
 
@@ -89,53 +92,56 @@ class ConnectivityController extends Controller
         }
          else
         {
-		$browser = get_browser(null, true);
+		// $browser = get_browser(null, true);
 
-		$isemailed =0 ;
-		$emailed_to ='' ;
-		$is_sent_by_api = 0;
-		$api_request_data = '' ;
-		$api_reply_data = '' ;
+		// $isemailed =0 ;
+		// $emailed_to ='' ;
+		// $is_sent_by_api = 0;
+		// $api_request_data = '' ;
+		// $api_reply_data = '' ;
 
             $connectivityApplication = new ConnectivityApplication;
             $connectivityApplication->name = $request->name;
             $connectivityApplication->phone = $request->phone;
             $connectivityApplication->email = $request->email;
-            $connectivityApplication->district_id = $request->district;
-            $connectivityApplication->internet_coverage_id = $request->locality;
             $connectivityApplication->address = $request->address;
+            $connectivityApplication->district_id = $request->district;
+            // $connectivityApplication->internet_coverage_id = $request->locality;
             $connectivityApplication->package_id = $request->package;
-            $connectivityApplication->promo_code = $request->referral;
-            $connectivityApplication->policy_agreed = $request->policy;
-            $connectivityApplication->is_human_verified = 0;
-            $connectivityApplication->remote_addr = UserSystemInfoHelper::get_ip();
-            $connectivityApplication->remote_port = $_SERVER['REMOTE_PORT'];
-            $connectivityApplication->request_scheme = $_SERVER['REQUEST_SCHEME'];
-            $connectivityApplication->request_method = $_SERVER['REQUEST_METHOD'];
-            $connectivityApplication->platform = $browser['platform'];
-            $connectivityApplication->browser = $browser['browser'];
-            $connectivityApplication->browser_maker = $browser['browser_maker'];
-            $connectivityApplication->browser_version = $browser['version'];
-            $connectivityApplication->device_type = $browser['device_type'];
-            $connectivityApplication->device_pointing_method = $browser['device_pointing_method'];
-            $connectivityApplication->minorver = $browser['minorver'];
-            $connectivityApplication->ismobiledevice = $browser['ismobiledevice'];
-            $connectivityApplication->istablet = $browser['istablet'];
-            $connectivityApplication->crawler = $browser['crawler'];
-            $connectivityApplication->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
-            $connectivityApplication->isemailed = $isemailed;
-            $connectivityApplication->emailed_to = $emailed_to;
-            $connectivityApplication->is_sent_by_api = $is_sent_by_api;
-            $connectivityApplication->api_request_data = $api_request_data;
-            $connectivityApplication->api_reply_data = $api_reply_data;
+            $connectivityApplication->referrer_id= $request->referral;
+            $connectivityApplication->promo_code = $request->promo;
+            // $connectivityApplication->policy_agreed = $request->policy;
+            // $connectivityApplication->is_human_verified = 0;
+            // $connectivityApplication->remote_addr = UserSystemInfoHelper::get_ip();
+            // $connectivityApplication->remote_port = $_SERVER['REMOTE_PORT'];
+            // $connectivityApplication->request_scheme = $_SERVER['REQUEST_SCHEME'];
+            // $connectivityApplication->request_method = $_SERVER['REQUEST_METHOD'];
+            // $connectivityApplication->platform = $browser['platform'];
+            // $connectivityApplication->browser = $browser['browser'];
+            // $connectivityApplication->browser_maker = $browser['browser_maker'];
+            // $connectivityApplication->browser_version = $browser['version'];
+            // $connectivityApplication->device_type = $browser['device_type'];
+            // $connectivityApplication->device_pointing_method = $browser['device_pointing_method'];
+            // $connectivityApplication->minorver = $browser['minorver'];
+            // $connectivityApplication->ismobiledevice = $browser['ismobiledevice'];
+            // $connectivityApplication->istablet = $browser['istablet'];
+            // $connectivityApplication->crawler = $browser['crawler'];
+            // $connectivityApplication->http_user_agent = $_SERVER['HTTP_USER_AGENT'];
+            // $connectivityApplication->isemailed = $isemailed;
+            // $connectivityApplication->emailed_to = $emailed_to;
+            // $connectivityApplication->is_sent_by_api = $is_sent_by_api;
+            // $connectivityApplication->api_request_data = $api_request_data;
+            // $connectivityApplication->api_reply_data = $api_reply_data;
             $connectivityApplication->save();
 
             if (! empty($connectivityApplication->id)) {
-                return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
+                // return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
+                return redirect('/success')->with('message' , json_encode(['status'=>1, 'msg'=>"Our team will contact you very soon."]));
             }
             else
             {
                 return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+                // return Redirect::back('/connectivity')->with('message', json_encode(['status'=>0, 'error'=>$validator->errors()->toArray()]));
             }
         }
        
@@ -204,6 +210,15 @@ class ConnectivityController extends Controller
             }
         }
        
+    }
+
+
+    public function submissionSuccess(){
+
+        
+        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+
+        return view('success', compact('socialMedias'));
     }
   
 

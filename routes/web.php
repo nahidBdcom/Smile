@@ -49,6 +49,7 @@ Route::get('/phone_call', [ContactController::class, 'phoneCall'])->name('phone_
 Route::get('/connectivity', [ConnectivityController::class, 'index'])->name('connectivity');
 Route::post('/getDistrictLocalityData', [ConnectivityController::class, 'districtLocality'])->name('getDistrictLocalityData');
 Route::post('/connectivity_request', [ConnectivityController::class, 'storeUserConnectivityApplicationInfo'])->name('connectivityRequest');
+Route::get('/success', [ConnectivityController::class, 'submissionSuccess'])->name('success');
 
 Route::get('/test', [TestController::class, 'show'])->name('test');
 Route::get('/test_digits_between', [TestController::class, 'digitsBetween'])->name('DigitsBetween');

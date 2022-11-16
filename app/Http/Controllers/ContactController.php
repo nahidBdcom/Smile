@@ -107,10 +107,12 @@ class ContactController extends Controller
        
     }
 
-    public function phoneCall(){
+    public function phoneCall(){  
+
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
-        
-        return view ('phone_call', compact('socialMedias'));
+
+        return view('phone_call', compact('socialMedias'));
+
     }
   
 

@@ -78,33 +78,39 @@
             });
 
             /*checkbox*/
-            $('#connectivity-form-policy').click(function(){
-                if($(this).prop("checked") == true){
-                    $('#connectivity-form-submit').prop("disabled", false);
-                }
-                else if($(this).prop("checked") == false){
-                    $('#connectivity-form-submit').prop("disabled", true);
-                }
-            });
+            // $('#connectivity-form-policy').click(function(){
+            //     if($(this).prop("checked") == true){
+            //         $('#connectivity-form-submit').prop("disabled", false);
+            //     }
+            //     else if($(this).prop("checked") == false){
+            //         $('#connectivity-form-submit').prop("disabled", true);
+            //     }
+            // });
 
             /*form validation*/
             (function () {
             'use strict'
 
+            
+
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
 
             // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
+            Array.prototype.slice.call(forms).forEach(function (form) {
                 form.addEventListener('submit', function (event) {
+                    
                     event.preventDefault()
                     form.classList.add('was-validated')
-                    if (!form.checkValidity()) {
-                    	event.stopPropagation()
-		    }
-		    else
-		    {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                    	event.stopImmediatePropagation();
+		            }
+                    else
+                    {
+                
+                // event.preventDefault();
+                
 			   /*Ajax Request Header setup*/
    			   $.ajaxSetup({
       				headers: {
@@ -125,10 +131,11 @@
                 			$('span.name_error').text('');
                 			$('span.phone_error').text('');
                 			$('span.email_error').text('');
+                            $('span.address_error').text('');
                 			$('span.district_error').text('');
-                			$('span.locality_error').text('');
-                			$('span.package_error').text('');
-                			$('span.policy_error').text('');
+                            $('span.package_error').text('');
+                			// $('span.locality_error').text('');
+                			// $('span.policy_error').text('');
                 			$('p.connectivityRequestSuccessHead').text('');
                 			$('p.connectivityRequestSuccessMessage').text('');
         			},
@@ -138,15 +145,20 @@
                         				$('span.'+prefix+'_error').text(val[0]);
                     				});
                 			}else{
+                                   
                     				form.classList.remove('was-validated');
-						$('#connectivity_request_form')[0].reset();
-						$('#connectivity-form-submit').prop("disabled", true);
-						$('.connectivityDistrictSelect2').val(null).trigger('change');
-						$('#connectivity-form-Locality').empty();
-						$('#connectivity-form-Locality').prop("disabled", true);
+                                    $('#connectivity_request_form')[0].reset();
+                                    $('#connectivity-form-submit').prop("disabled", true);
+                                    $('.select2').val(null).trigger('change');
+                                    // window.location = "{{route('success')}}";
+                                    // $('.connectivityDistrictSelect2').val(null).trigger('change');
+                                    // $('#connectivity-form-Locality').empty();
+                                    // $('#connectivity-form-Locality').prop("disabled", true);
                     				$('p.connectivityRequestSuccessHead').text(' Sent successfully!');
                     				$('p.connectivityRequestSuccessHead').prepend('<img src="{{asset("assets/images/success_logo.png")}}" alt="success">');
                     				$('p.connectivityRequestSuccessMessage').text('Our team will contact you very soon.');
+
+                                    
                 			}
 
             			}

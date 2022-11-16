@@ -262,7 +262,7 @@ class CommonController extends Controller
 
 
     public function reviews(){
-        $customerReviews = CustomerReview::where('status',1)->paginate(18);
+        $customerReviews = CustomerReview::where('status',1)->paginate(2);
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         $districts = District::select('id','name')->where('status',1)->orderBy('order','ASC')->get();
 
