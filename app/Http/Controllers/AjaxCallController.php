@@ -13,6 +13,7 @@ class AjaxCallController extends Controller
     public function user_location_rating_wise(Request $request)
     {
         $customerReviews = CustomerReview::join('customers','customer_reviews.customer_id','customers.id')
+        ->where('status',1)
         ->when($request->data['district'], function($query) use ($request){
             $query->where('customers.district_id', $request->data['district']);
         })
