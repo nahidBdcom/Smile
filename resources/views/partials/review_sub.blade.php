@@ -138,20 +138,18 @@
                     let url = "{{route('user_location_rating_wise')}}?page="+page;
                     let token = "{{csrf_token()}}";
                     $.post(url,{_token:token, data: post_data}, function(response){
-                        $(".appendReview").fadeOut(500, function(response){
+                        $(".appendReview").fadeOut(500, function(){
                             $(".appendReview").empty();
-                        });
-                        setTimeout(function(){
                             $(".appendReview").html(response);
-                        }, 800)
-                    }).done(function(response) {
+                        });
+                    }).done(function() {
                         $(".appendReview").fadeIn(500, function(){
                         });
                         setTimeout(function(){
                             let links = $('.links_').html();
                             $('.pageination').empty();
                             $('.pageination').html(links);
-                        },1000)
+                        },600)
                     }).fail(function() {
                         return "Something went wrong!";
                     });
@@ -170,22 +168,18 @@
             let url = "{{route('user_location_rating_wise')}}";
             let token = "{{csrf_token()}}";
             $.post(url,{_token:token, data: post_data}, function(response){
-                $(".appendReview").fadeOut(500, function(response){
+                $(".appendReview").fadeOut(500, function(){
                     $(".appendReview").empty();
-                });
-                setTimeout(function(){
                     $(".appendReview").html(response);
-                }, 800)
-                //$('.appendReview').empty();
-                //$('.appendReview').html(response);
-            }).done(function(response) {
+                });
+            }).done(function() {
                 $(".appendReview").fadeIn(500, function(){
                 });
                 setTimeout(function(){
                     let links = $('.links_').html();
                     $('.pageination').empty();
                     $('.pageination').html(links);
-                },1000)
+                },600)
             }).fail(function() {
                 return "Something went wrong!";
             });;
