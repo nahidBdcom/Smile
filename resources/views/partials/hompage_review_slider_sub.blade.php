@@ -21,6 +21,9 @@
         </div>
     @endforeach
 </div>
+<li>
+    {{$customerReviews->links()}}
+</li>
 
 
 

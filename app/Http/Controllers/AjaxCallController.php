@@ -23,10 +23,13 @@ class AjaxCallController extends Controller
         ->when($request->data['pagination'] == "false", function($query) use ($request){
             $query->where('show_at_home',1);
         })
-        ->when($request->data['pagination']=="true", function($query) use ($request){
-            $query->paginate(10);
-        })
-        ->get();
+        ->paginate(3);
+        // ->when($request->data['pagination']=="true", function($query) use ($request){
+        //     $query->paginate(1);
+        // })
+        // ->when($request->data['pagination']=="false", function($query) use ($request){
+        //     $query->get();
+        // });
 
         if($request->data['pagination']){
             return view('partials.hompage_review_page_sub',compact('customerReviews'));
