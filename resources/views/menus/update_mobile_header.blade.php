@@ -46,13 +46,18 @@
              <li class="nav-item">
                 <a class="nav-link" href="self-care.html">Self Care</a>
              </li>
+             {{-- <li> {{menu('main_menu', 'menus.smile_topmenu_bootstrap')}} </li> --}}
+             {{-- <li> {{menu('main_menu')}} </li> --}}
+             
           </ul>
           <div class="menu-social">
-             <a href="#" class="fa fa-facebook"></a>
+             {{-- <a href="#" class="fa fa-facebook"></a>
              <a href="#" class="fa fa-linkedin"></a>
              <a href="#" class="fa fa-youtube"></a>
              <a href="#" class="fa fa-instagram"></a>
-             <a href="#" class="fa fa-linkedin"></a>
+             <a href="#" class="fa fa-linkedin"></a> --}}
+             {{-- @include('partials.social_media_icons') --}}
+             @include('partials.social_media_icons_mobile')
           </div>
           <div class="menu-infoo">
              <h5>Helpdesk 24/7</h5>

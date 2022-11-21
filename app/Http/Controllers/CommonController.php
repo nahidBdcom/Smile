@@ -191,7 +191,7 @@ class CommonController extends Controller
     }
 
     public function packageUpdated($packageCategory){
-
+        
         $packages = PackageCategory::with('packages')->where('slug',$packageCategory)->first();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
         return view('package_updated', compact('packages','socialMedias'));

@@ -23,7 +23,9 @@
 
  @include("partials.feature_1")
 
-@include("partials.package_info")
+ @include("partials.package_info")
+
+ {{-- @include("partials.package_faqs") --}}
 
  @include("partials.feature_2")
 
