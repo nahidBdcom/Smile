@@ -1,6 +1,6 @@
 
 
-<div class="row test-slider-active">
+{{--  <div class="row test-slider-active">  --}}
     @foreach ($customerReviews as $customerReview)
     <div class="col-lg-4">
         <img class="test-icon img-fluid" src="{{asset('/storage/'.$customerReview->customer->photo)}}" alt="">
@@ -20,7 +20,12 @@
             <p class="date-4">{{$customerReview->customer->district->name}}</p>
         </div>
     </div>
- @endforeach
+    @endforeach
+    <li class="links_" hidden>
+        {{$customerReviews->links()}}
+    </li>
+{{--  </div>  --}}
+
 
 
 

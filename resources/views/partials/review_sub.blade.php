@@ -85,7 +85,7 @@
                   <p class="date-4">{{$customerReview->customer->district->name}}</p>
               </div>
           </div>
-          
+
        @endforeach
 
        </div>
@@ -100,14 +100,14 @@
              <nav aria-label="Page navigation example">
                 <ul class="pagination">
 
-                   <li class="page-item">
-                        {{$customerReviews->links()}}                    
-                    </li> 
-                  
+                   <li class="page-item pageination">
+                        {{$customerReviews->links()}}
+                    </li>
+
                 </ul>
              </nav>
           </div>
-          
+
        </div>
     </div>
  </div>
@@ -118,6 +118,42 @@
 
         $(document).ready(function() {
             $('.selectSearch').select2();
+
+            $(document).on('click', '.pagination a', function(event){
+                event.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                fetch_data(page);
+               });
+
+               function fetch_data(page)
+               {
+
+                    let district = $('.getDistrict').val();
+                    let rating = $('.getRating').val();
+                    let post_data = {
+                        district : district,
+                        rating : rating,
+                        pagination: true
+                    }
+                    let url = "{{route('user_location_rating_wise')}}?page="+page;
+                    let token = "{{csrf_token()}}";
+                    $.post(url,{_token:token, data: post_data}, function(response){
+                        $(".appendReview").fadeOut(500, function(){
+                            $(".appendReview").empty();
+                            $(".appendReview").html(response);
+                        });
+                    }).done(function() {
+                        $(".appendReview").fadeIn(500, function(){
+                        });
+                        setTimeout(function(){
+                            let links = $('.links_').html();
+                            $('.pageination').empty();
+                            $('.pageination').html(links);
+                        },600)
+                    }).fail(function() {
+                        return "Something went wrong!";
+                    });
+               }
         });
 
 
@@ -132,19 +168,18 @@
             let url = "{{route('user_location_rating_wise')}}";
             let token = "{{csrf_token()}}";
             $.post(url,{_token:token, data: post_data}, function(response){
-                $(".appendReview").fadeOut(500, function(response){
+                $(".appendReview").fadeOut(500, function(){
                     $(".appendReview").empty();
-                });
-                setTimeout(function(){
                     $(".appendReview").html(response);
-                }, 800)
-
-
-                //$('.appendReview').empty();
-                //$('.appendReview').html(response);
-            }).done(function(response) {
+                });
+            }).done(function() {
                 $(".appendReview").fadeIn(500, function(){
                 });
+                setTimeout(function(){
+                    let links = $('.links_').html();
+                    $('.pageination').empty();
+                    $('.pageination').html(links);
+                },600)
             }).fail(function() {
                 return "Something went wrong!";
             });;
