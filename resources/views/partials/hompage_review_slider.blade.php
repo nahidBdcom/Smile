@@ -109,7 +109,7 @@
            rating : rating,
            pagination: false
        }
-       let url = "{{route('user_location_rating_wise')}}";
+       let url = "{{route('user_location_rating_wise_slider')}}";
        let token = "{{csrf_token()}}";
        $.post(url,{_token:token, data: post_data}, function(response){
 

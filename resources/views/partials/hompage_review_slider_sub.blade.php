@@ -23,9 +23,12 @@
         </div>
     @endforeach
 </div>
-<li>
+<a class="btn mt-55" href="#"> Post review
+    <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>
+</a>
+{{--  <li>
     {{$customerReviews->links()}}
-</li>
+</li>  --}}
 
 
 
