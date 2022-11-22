@@ -37,24 +37,20 @@
                             </select>
                         </form>
                     </div>
-                    <div class="append_inside">
-                        <div id="ajax-data">
+                    <div id="accordion" class="mz-c-faq">
+                        <div id="accordion" class="mz-c-faq">
                             @foreach ($faqs as $faq)
-                                <div id="accordion-{{$faq->id}}" class="mz-c-faq">
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne-{{$faq->id}}" aria-expanded="false" aria-controls="collapseOne-{{$faq->id}}">
-                                                    {{$faq->title}}
-                                                </button>
-                                            </h5>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingOne-{{$faq->id}}">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne-{{$faq->id}}" aria-expanded="false" aria-controls="collapseOne-{{$faq->id}}">
+                                            {{$faq->title}}
+                                        </button>
+                                        </h5>
+                                    </div>
 
-                                        <div id="collapseOne-{{$faq->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-{{$faq->id}}">
-                                            <div class="card-body">
-                                                {!! $faq->description !!}
-                                            </div>
-                                        </div>
+                                    <div id="collapseOne-{{$faq->id}}" class="collapse" aria-labelledby="headingOne-{{$faq->id}}" data-parent="#accordion">
+                                        <div class="card-body">{!! $faq->description !!}</div>
                                     </div>
                                 </div>
                             @endforeach
@@ -66,7 +62,7 @@
     </div>
  </div>
 
- {{--  @include('partials.faq_body')  --}}
+
 
 
 
@@ -80,14 +76,14 @@
         }
 
         $.post(url,{ _token:token, post_data: post_data }, function(response) {
-            $("#ajax-data").fadeOut(500, function(response){
-                $("#ajax-data").empty();
+            $("#accordion").fadeOut(500, function(response){
+                $("#accordion").empty();
             });
             setTimeout(function(){
-                $("#ajax-data").html(response);
+                $("#accordion").html(response);
             }, 800)
         }).done(function(response) {
-            $("#ajax-data").fadeIn(500, function(){
+            $("#accordion").fadeIn(500, function(){
             });
 
             //$('#ajax-data').fadeOut( "slow", function(response) {
