@@ -78,11 +78,12 @@
 
                   <p class="date">{{$customerReview->review_date}}</p>
                   <span class="date-2">{!! $customerReview->description !!}</span>
-                  {{-- <span class="date-2 collapse" id="collapseWidthExample111"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span> --}}
-                  <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample111" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a>
+                  <span class="date-2 collapse" id="collapse{{$customerReview->id}}"> {!! $customerReview->description_more !!} </span>
+                  <a class="sml-rm-text" data-toggle="collapse" href="#collapse{{$customerReview->id}}" aria-expanded="false" aria-controls="collapse{{$customerReview->id}}">Read more</a>
 
                   <p class="date-3">{{$customerReview->customer->name}}</p>
                   <p class="date-4">{{$customerReview->customer->district->name}}</p>
+                  
               </div>
           </div>
 

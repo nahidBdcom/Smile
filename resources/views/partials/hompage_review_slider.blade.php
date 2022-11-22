@@ -28,6 +28,7 @@
     }  --}}
 </style>
 @endsection
+
 <div class="section-5-area">
     <div class="container">
         <div class="row align-items-end">
@@ -77,6 +78,8 @@
 
                         <p class="date">{{$customerReview->review_date}}</p>
                         <span class="date-2">{!! $customerReview->description !!}</span>
+                        <span class="date-2 collapse" id="collapse{{$customerReview->id}}"> {!! $customerReview->description_more !!} </span>
+                        <a class="sml-rm-text" data-toggle="collapse" href="#collapse{{$customerReview->id}}" aria-expanded="false" aria-controls="collapse{{$customerReview->id}}">Read more</a>
 
 
                         <p class="date-3">{{$customerReview->customer->name}}</p>
