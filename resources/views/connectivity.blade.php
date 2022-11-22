@@ -103,7 +103,7 @@
                     event.preventDefault()
                     form.classList.add('was-validated')
                     if (form.checkValidity() === false) {
-                        event.preventDefault();
+                        // event.preventDefault();
                     	event.stopImmediatePropagation();
 		            }
                     else
@@ -150,7 +150,7 @@
                                     $('#connectivity_request_form')[0].reset();
                                     $('#connectivity-form-submit').prop("disabled", true);
                                     $('.select2').val(null).trigger('change');
-                                    // window.location = "{{route('success')}}";
+                                    window.location = "{{route('success')}}";
                                     // $('.connectivityDistrictSelect2').val(null).trigger('change');
                                     // $('#connectivity-form-Locality').empty();
                                     // $('#connectivity-form-Locality').prop("disabled", true);

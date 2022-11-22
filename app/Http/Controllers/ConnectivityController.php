@@ -135,8 +135,8 @@ class ConnectivityController extends Controller
             $connectivityApplication->save();
 
             if (! empty($connectivityApplication->id)) {
-                // return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
-                return redirect('/success')->with('message' , json_encode(['status'=>1, 'msg'=>"Our team will contact you very soon."]));
+                return response()->json(['status'=>1, 'msg'=>"Our team will contact you very soon."]);
+                // return redirect('/success')->with('message' , json_encode(['status'=>1, 'msg'=>"Our team will contact you very soon."]));
             }
             else
             {
@@ -214,11 +214,12 @@ class ConnectivityController extends Controller
 
 
     public function submissionSuccess(){
-
         
-        $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+       
+               $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
 
-        return view('success', compact('socialMedias'));
+                return view('success', compact('socialMedias'));
+        
     }
   
 
