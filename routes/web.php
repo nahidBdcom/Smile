@@ -71,7 +71,7 @@ Route::get('/bill', [CommonController::class, 'bill'])->name('bill_payment_guide
 
 Route::get('/media', [CommonController::class, 'media'])->name('media_center');
 
-/*About*/ 
+/*About*/
 
 Route::get('/about', [CommonController::class, 'aboutUs'])->name('about');
 
@@ -85,6 +85,7 @@ Route::get('/reviews',[CommonController::class, 'reviews'])->name('reviews');
 Route::get('/faqs', [CommonController::class, 'faqs'])->name('faqs');
 
 //=======================Ajax Routes=======================
+Route::post('/user_location_rating_wise_slider', [AjaxCallController::class, 'user_location_rating_wise_slider'])->name('user_location_rating_wise_slider');
 Route::post('/user_location_rating_wise', [AjaxCallController::class, 'user_location_rating_wise'])->name('user_location_rating_wise');
 Route::post('/contents/faqs', [AjaxCallController::class, 'contents_faqs'])->name('contents.faqs');
 
