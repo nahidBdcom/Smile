@@ -24,31 +24,9 @@
        </button>
        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Packages
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                   <a class="dropdown-item" href="standard-package.html">Standard</a>
-                   <a class="dropdown-item" href="ek-desh-ek-rate.html">Ek Desh Ek Rate</a>
-                </div>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="faq.html">FAQs</a>
-                <span class="cus-bor"></span>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="self-care.html">Self Care</a>
-             </li>
-             {{-- <li> {{menu('main_menu', 'menus.smile_topmenu_bootstrap')}} </li> --}}
-             {{-- <li> {{menu('main_menu')}} </li> --}}
-             
+            {{menu('main_menu', 'menus.smile_mobile_topmenu_bootstrap')}}
+            
+
           </ul>
           <div class="menu-social">
              {{-- <a href="#" class="fa fa-facebook"></a>
