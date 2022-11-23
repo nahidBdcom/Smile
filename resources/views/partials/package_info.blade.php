@@ -15,10 +15,11 @@
                             <hr>
                             <span class="pk-6">{!! $package->features_1 !!}</span>
                             <span class="pk-7">{!! $package->features_2 !!}</span>
-                            <div class="moz-value">
+                            {{-- <div class="moz-value">
                                 <span class="pk-8">{!! $package->features !!}</span>
                                
-                            </div>
+                            </div> --}}
+                            {!! $package->features !!}
                             <div class="pk-btn">
                                 <a class="btn" href="{{route('connectivity')}}">
                                 Get Connectivity

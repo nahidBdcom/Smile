@@ -1,6 +1,6 @@
  //Sticky NaV
 
-$(function () {
+ $(function () {
     $(window).on('scroll', function () {
         if ( $(window).scrollTop() > 10 ) {
             $('.nav-scl').addClass('active');
@@ -36,31 +36,7 @@ for (i = 0; i < acc.length; i++) {
 
 
 
-(function ($) {
-"use strict";
 
-// meanmenu
-$('#mobile-menu').meanmenu({
-	meanMenuContainer: '.mobile-menu',
-	meanScreenWidth: "992"
-});
-
-// One Page Nav
-var top_offset = $('.header-area').height() - 10;
-$('.main-menu nav ul').onePageNav({
-	currentClass: 'active',
-	scrollOffset: top_offset,
-});
-
-
-$(window).on('scroll', function () {
-	var scroll = $(window).scrollTop();
-	if (scroll < 245) {
-		$(".header-sticky").removeClass("sticky");
-	} else {
-		$(".header-sticky").addClass("sticky");
-	}
-});
 
 
 
@@ -108,12 +84,12 @@ $(window).on('scroll', function () {
 		  $('.test-slider-active').slick({
 			dots: false,
 			infinite: true,
-			autoplay: false,
+			autoplay: true,
 			speed: 300,
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			
-			centerMode: true,
+			centerMode: false,
 			focusOnSelect: false,
 			responsive: [
 			  {
@@ -189,23 +165,6 @@ $(window).on('scroll', function () {
 
 
 
-	
-
-
-
-
-// isotop
-$('.grid').allImagesLoaded( function() {
-	// init Isotope
-	var $grid = $('.grid').isotope({
-	  itemSelector: '.grid-item',
-	  percentPosition: true,
-	  masonry: {
-		// use outer width of grid-sizer for columnWidth
-		columnWidth: '.grid-item',
-	  }
-	});
-});
 
 // filter items on button click
 $('.portfolio-menu').on( 'click', 'button', function() {
@@ -223,26 +182,6 @@ $('.portfolio-menu button').on('click', function(event) {
 
 
 
-// scrollToTop
-$.scrollUp({
-	scrollName: 'scrollUp', // Element ID
-	topDistance: '300', // Distance from top before showing element (px)
-	topSpeed: 300, // Speed back to top (ms)
-	animation: 'fade', // Fade, slide, none
-	animationInSpeed: 200, // Animation in speed (ms)
-	animationOutSpeed: 200, // Animation out speed (ms)
-	scrollText: '<i class="icofont icofont-long-arrow-up"></i>', // Text for element
-	activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-});
-
-// WOW active
-new WOW().init();
-
-
-})(jQuery);
-
-
-
 grecaptcha.ready(function () {
     if (grecaptcha.getResponse() === "") {
         alert("Please validate the Google reCaptcha.");
@@ -250,19 +189,6 @@ grecaptcha.ready(function () {
         alert("Successful validation! Now you can submit this form to your server side processing.");
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 $(document).ready(function(){
@@ -278,6 +204,10 @@ $(document).ready(function(){
 	});
 });
 
+
+$(document).on('click', 'nav ul li', function(){
+	$(this).addClass('moz-active').siblings().removeClass('moz-active')
+})
 
 
 function myFunction() {
@@ -299,13 +229,5 @@ function filterFunction() {
     }
   }
 }
-
-
-
-$(document).on('click', 'nav ul li', function(){
-	$(this).addClass('moz-active').siblings().removeClass('moz-active')
-})
-
-
 
 

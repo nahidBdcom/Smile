@@ -69,7 +69,7 @@
     </div>
  </div>
 
- <div class="modal" tabindex="-1" role="dialog" id="myModal">
+ {{-- <div class="modal" tabindex="-1" role="dialog" id="myModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         {{--  <div class="modal-header">
@@ -78,7 +78,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>  --}}
-        <div class="modal-body">
+        {{-- <div class="modal-body">
           <h3>We are available in your area</h3>
         </div>
         <div class="modal-footer">
@@ -86,7 +86,28 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}} 
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content mz-mod">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+         <button type="button" class="close mod-close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <h2>We are availale in your area! </h2>
+       </div>
+       <div class="modal-footer">
+         <a class="btn" href="{{route('connectivity')}}"> Get connectivity
+            <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>
+         </a>
+       </div>
+     </div>
+   </div>
+ </div>
 @php
     $location = '{';
     foreach ($districts as $district){
@@ -142,7 +163,7 @@
 
         $( "#getArea" ).click(function() {
             if($('#coverage_location').val() != ''){
-                $('#myModal').modal('show');
+                $('#exampleModalCenter').modal('show');
             }
         });
     }

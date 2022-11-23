@@ -194,6 +194,9 @@ class CommonController extends Controller
         
         $packages = PackageCategory::with('packages')->where('slug',$packageCategory)->first();
         $socialMedias = SocialMedia::where('status',1)->orderBy('order')->get();
+        // $faqs = ContentFaq::with('slug', $packageCategory->slug)->where('status',1)->get();
+        $faqs = package::join('package_faqs', 'package_faqs.package_id', 'packages.id')->where('packages.package_category_id', $packages->id)->get();
+        dd($faqs);
         return view('package_updated', compact('packages','socialMedias'));
 
 

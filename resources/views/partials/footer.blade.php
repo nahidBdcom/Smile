@@ -6,14 +6,14 @@
                 <h5 class="footer-title">Helpdesk 24/7</h5>
                 <ul>
                    <li>
-                      <a href="tel:+09666666666"> {!! setting('site.footer_contact_number') !!}</a>
+                       {!! setting('site.footer_contact_number') !!}
                    </li>
                    <li>
-                      <a href="mailto:helpdesk@smile.com.bd">{!! setting('site.footer_email_address') !!}</a>
+                      {!! setting('site.footer_email_address') !!}
                    </li>
                 </ul>
                 <div class="info-text">
-                   <p class="footer-info">{!! setting('site.footer_head_office_address') !!}</p>
+                   {!! setting('site.footer_head_office_address') !!}
                 </div>
              </div>
              <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-2">

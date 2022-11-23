@@ -1,8 +1,8 @@
-<header class="transparent-header fixed-top d-lg-none nav-scl">
+<header class="{{Route::currentRouteName()=='home' ? 'transparent-header fixed-top d-lg-none nav-scl' : 'transparent-header navbar fixed-top d-lg-none hedaer-mob-bg'}}">
     <nav class="navbar navbar-expand-lg navbar-light ">
 
        <div>
-       <a class="navbar-brand" href="index.html"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
+       <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
     </div>
 
 
