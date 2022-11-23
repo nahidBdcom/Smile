@@ -25,7 +25,7 @@
 
  @include("partials.package_info")
 
- {{-- @include("partials.package_faqs") --}}
+ @include("partials.package_faqs")
 
  @include("partials.feature_2")
 
