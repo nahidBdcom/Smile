@@ -2652,7 +2652,7 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .user_review_page .row {
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 
@@ -3321,3 +3321,51 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
         }
         
     }
+
+    @media only screen and (max-width: 767px) {
+        .rect-icon-office img {
+	        width: 52px
+        }
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-call { 
+        text-align: right;
+    }
+
+    .pageination .small {
+        margin-right: 20px
+    }
+    
+   
+
+    .sl-snd select {
+        margin-bottom: 0 !important;
+        padding: 10px;
+        border: 0 !important;
+        }
+    
+
+}
+
+
+@media (min-width: 770px) and (max-width: 1599px) {
+    .sml-branch {
+    height: 350px !important;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+.cov_f {
+ width: 250px;
+}
+}
+
+
+.pageination .page-item.active .page-link {
+    background-color: #FFC215;
+    border-color:  #FFC215;
+    color: #03314B;
+}
+

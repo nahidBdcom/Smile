@@ -38,7 +38,7 @@ class AjaxCallController extends Controller
         })
         ->paginate(3);
 
-        return view('partials.hompage_review_page_sub',compact('customerReviews'));
+        return view('partials.review_page_sub',compact('customerReviews'));
     }
 
     public function contents_faqs(Request $request)

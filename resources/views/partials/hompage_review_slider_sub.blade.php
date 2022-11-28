@@ -3,7 +3,7 @@
 <div class="row test-slider-active">
     @foreach ($customerReviews as $customerReview)
         <div class="col-lg-3 col-sm-12">
-            <img class="test-icon img-fluid" src="{{asset('/storage/'.$customerReview->customer->photo)}}" alt="">
+             <img class="test-icon img-fluid" src="{{$customerReview->customer->photo != null ? asset('/storage/'.$customerReview->customer->photo) : asset('/storage/customers/happy_customer.png')}}" alt="">
             <div class="dart-box">
 
 
@@ -23,7 +23,7 @@
         </div>
     @endforeach
 </div>
-<a class="btn mt-55" href="#"> Post review
+<a class="btn mt-55" href="https://portal.smile.com.bd/customer/login"> Post review
     <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>
 </a>
 {{--  <li>

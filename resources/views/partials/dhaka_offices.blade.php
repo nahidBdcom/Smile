@@ -24,11 +24,7 @@
                 </div>
                 <div class="sml-branch sml-tag">
                    <h5>Head Office</h5>
-                   <p> 
-                    {!! setting('site.footer_head_office_address') !!}<br><br>
-                    {!! setting('site.footer_contact_number') !!}<br>
-                    {!! setting('site.footer_email_address') !!}
-                   </p>
+                   {!! setting('site.head_office_card_contact') !!}
                 </div>
              </div>
           </div>

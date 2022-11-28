@@ -3,7 +3,7 @@
  <div class="row test-slider-active"> 
     @foreach ($customerReviews as $customerReview)
     <div class="col-lg-4">
-        <img class="test-icon img-fluid" src="{{asset('/storage/'.$customerReview->customer->photo)}}" alt="">
+        <img class="test-icon img-fluid" src="{{$customerReview->customer->photo != null ? asset('/storage/'.$customerReview->customer->photo) : asset('/storage/customers/happy_customer.png')}}" alt="">
         <div class="dart-box">
             @for($i = 1; $i <= $customerReview->ratings; $i++)
                 <i class="fas fa-star" aria-hidden="true"></i>

@@ -8,8 +8,10 @@
                    <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
                 </div>
                 <div class="section-8-content">
-                   <h5 class="h5">{!! setting('site.footer_contact_number') !!}</h5>
-                   <h5 class="h5"> {!! setting('site.footer_email_address') !!}</h5>
+                   
+                   {!! setting('site.footer_contact_number') !!}
+                   
+                   {!! setting('site.footer_email_address') !!}
                 </div>
              </div>
              <div class="text-end">
@@ -31,10 +33,10 @@
              </div>
              <div class="sml-branch sml-tag">
                 <h5>Head Office</h5>
-                <p>{!! setting('site.footer_head_office_address') !!}<br><br>
-                   {!! setting('site.footer_contact_number') !!}<br>
-                   {!! setting('site.footer_email_address') !!}
-                </p>
+                
+                {!! setting('site.head_office_card_contact') !!}
+                  
+                
              </div>
           </div>
        </div>

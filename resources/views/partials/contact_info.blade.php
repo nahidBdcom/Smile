@@ -38,8 +38,8 @@
                          <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
                       </div>
                       <div class="section-8-content">
-                         <h5 class="h5">{!! setting('site.footer_contact_number') !!}</h5>
-                         <h5 class="h5">  {!! setting('site.footer_email_address') !!}</h5>
+                         {!! setting('site.footer_contact_number') !!}
+                         {!! setting('site.footer_email_address') !!}
                       </div>
                    </div>
                    <img src="{{asset('/storage/'.setting('site.contact_form_image'))}}" class="img-fluid">

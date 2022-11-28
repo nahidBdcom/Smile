@@ -4103,7 +4103,7 @@ color: #000000;
         outline: 0;
         background: #FFF;
         border: 2px solid #FFF;
-        padding: 4px 9px;
+        /* padding: 4px 9px; */
         box-shadow: 0px 24.9768px 37.4652px rgba(0, 0, 0, 0.07);
         border-radius: 5px;
         margin-right: 8px;
