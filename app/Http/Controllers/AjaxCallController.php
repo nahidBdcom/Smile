@@ -43,9 +43,18 @@ class AjaxCallController extends Controller
 
     public function contents_faqs(Request $request)
     {
+        $contents = Content::where('status',1)
+        ->where('show_faq_in_main_faq',1)
+        ->orderBy('id')
+        ->get();
+
+        
         $faqs = ContentFaq::select('*')
                 ->when($request->post_data['content_id'], function($query) use ($request){
                     $query->where('content_id',$request->post_data['content_id']);
+                })
+                ->when(!$request->post_data['content_id'], function($query) use ($request, $contents){
+                    $query->whereIn('content_id',$contents->pluck('id'));
                 })
                 ->where('status',1)
                 ->orderBy('order')
