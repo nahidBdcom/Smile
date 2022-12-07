@@ -3369,3 +3369,33 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
     color: #03314B;
 }
 
+
+.std-pack-info p { 
+    max-width: 1130px ! important;
+        margin: 0 auto  ! important;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+.std-pack-info p {
+   max-width: 900px ! important;
+   margin: 0 auto  ! important;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+.std-pack-info p {
+   max-width: 800px  ! important;
+   margin: 0 auto  ! important;
+}
+
+}
+
+
+.moz-value span {
+	display: block !important;
+}
+
+.card-body li {
+	list-style: unset;
+}

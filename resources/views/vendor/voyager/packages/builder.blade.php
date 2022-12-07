@@ -56,7 +56,7 @@
 
 
     <div class="modal modal-info fade" tabindex="-1" id="package_faq_modal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-lg modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}"><span
