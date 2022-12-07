@@ -1,5 +1,5 @@
 @php
-$title_body = $contents->where('slug','frequently-ask-questions')->first();
+$title_body = $head->where('slug','frequently-ask-questions')->first();
 @endphp
 <div class="faq_area">
     <div class="container">

@@ -30,9 +30,7 @@
                             <select name="district" id="faq_type" onchange="getTypeWiseFAQs('{{route("contents.faqs")}}','{{csrf_token()}}',this)">
                                 <option value="">FAQ Type</option>
                                     @foreach ($contents as $content)
-                                        @if ($content->slug != 'frequently-ask-questions')
-                                            <option value="{{$content->id}}">{{$content->title}}</option>
-                                        @endif
+                                        <option value="{{$content->id}}">{{$content->faq_select_display_text}}</option>
                                     @endforeach
                             </select>
                         </form>
