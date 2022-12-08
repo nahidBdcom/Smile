@@ -8,8 +8,8 @@
                    <img src="{{asset('assets/img/Rectangle.png')}}" class="img-fluid" alt="">
                 </div>
                 <div class="section-8-content">
-                   <h5 class="h5"><a href="tel:+09666666666">09666 333 555</a></h5>
-                   <h5 class="h5"><a href="mailto:helpdesk@smile.com.bd"> helpdesk@smile.com.bd</a></h5>
+                   <h5 class="h5"><a href="tel:+{{setting('site.footer_contact_number')}}">{!! setting('site.footer_contact_number') !!}</a></h5>
+                   <h5 class="h5"><a href="mailto:{{setting('site.footer_email_address')}}"> {!! setting('site.footer_email_address') !!}</a></h5>
                 </div>
              </div>
              <div class="text-end">

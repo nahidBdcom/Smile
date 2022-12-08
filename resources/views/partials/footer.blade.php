@@ -6,10 +6,10 @@
                 <h5 class="footer-title">Helpdesk 24/7</h5>
                 <ul>
                    <li>
-                       {!! setting('site.footer_contact_number') !!}
+                     <a href="tel:+{{ setting('site.footer_contact_number')}}">{!! setting('site.footer_contact_number') !!}</a>
                    </li>
                    <li>
-                      {!! setting('site.footer_email_address') !!}
+                     <a href="mailto:{{ setting('site.footer_email_address')}}"> {!! setting('site.footer_email_address') !!}</a>
                    </li>
                 </ul>
                 <div class="info-text">

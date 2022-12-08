@@ -38,8 +38,8 @@
                          <img src="{{asset('/storage/'.setting('site.contact_form_icon'))}}" class="img-fluid" alt="">
                       </div>
                       <div class="section-8-content">
-                         {!! setting('site.footer_contact_number') !!}
-                         {!! setting('site.footer_email_address') !!}
+                        <h5 class="h5"><a href="tel:+{{setting('site.footer_contact_number')}}">{!! setting('site.footer_contact_number') !!}</a></h5>
+                        <h5 class="h5"><a href="mailto:{{setting('site.footer_email_address')}}"> {!! setting('site.footer_email_address') !!}</a></h5>
                       </div>
                    </div>
                    <img src="{{asset('/storage/'.setting('site.contact_form_image'))}}" class="img-fluid">
