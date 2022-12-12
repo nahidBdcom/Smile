@@ -19,8 +19,8 @@
                <div class="sm-hero-text text-center">
                  <div class="col-sm-12">
                     <div class="section-2-area-wrapper text-center">
-                       <h2>{!! setting('site.home_slider_title') !!}</h2>
-                       <p>{!! setting('site.home_slider_description') !!}</p>
+                       <h2>{!! $slideshow->title !!}</h2>
+                       <p>{!! $slideshow->excerpt !!}</p>
                        <a class="btn" href="{{url( ($slideshow->link == null )? "/" : $slideshow->link )}}"> Packages
                           <i class="fa fa-solid fa-chevron-right btn-icon ml-15"></i>
                        </a>

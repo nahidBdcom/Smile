@@ -116,7 +116,7 @@
             "'.$district->name.'": {';
         foreach($district->internetCoverages as $coverage){
             $location .= '
-               "'. $coverage->title. '": [],' ;
+               "'. $coverage->title. '": [],'  ;
         }
         $location .= '
             },';

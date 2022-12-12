@@ -7,9 +7,14 @@
             <div class="dart-box">
 
 
-                @for($i = 1; $i <= $customerReview->ratings; $i++)
+            @for ($i = 1; $i <= 5; $i++)
+                @if ($i <= $customerReview->ratings)
                     <i class="fas fa-star" aria-hidden="true"></i>
-                @endfor
+                @else
+                    <i class="far fa-star" aria-hidden="false"></i>
+                @endif
+
+            @endfor
 
                 <p class="date">{{$customerReview->review_date}}</p>
                 <span class="date-2">{!! $customerReview->description !!}</span>

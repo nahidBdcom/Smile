@@ -20,6 +20,7 @@
         @yield('additional-style-reviews')
         @yield('additional-style-connectivity-form-css')
         @yield('additional-userreview-css')
+        @yield('additional-coveragearea-css')
 
 
         <script type="text/javascript">

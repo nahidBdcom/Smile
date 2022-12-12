@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+.navbar.active {
+    //background-image: url("{{asset('/public/img/top-banner-img')}}"); 
+    background-image: url('../../img/top-banner-img.jpg'); 
+    //background-color: #f6f6f6;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
@@ -2519,10 +2525,7 @@ select,
     transition: all 0.4s;
 }
 
-.navbar.active {
-    background-image: url('../../img/top-banner-img.jpg');
-    //background-color: #f6f6f6;
-}
+
 
 .fixed-top {
     border-bottom: 0.9px solid #808080;
@@ -3404,4 +3407,43 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
 	list-style: unset;
 }
 
+
+/* Animated Menu */
+
+ 
+.navbar-toggler span {
+    display: block;
+    background-color: #FFFFFF;
+    height: 3px;
+    width: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transition: all 0.35s ease-out;
+    transform-origin: center left;
+}
+.navbar-toggler span:nth-child(1) {
+    margin-top: 0.3em;
+}
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    transform: translate(15%, -33%) rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    opacity: 0;
+}
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    transform: translate(15%, 33%) rotate(-45deg) ;
+}
+
+.navbar-toggler span:nth-child(1) {
+    transform: translate(0%, 0%) rotate(0deg) ;
+}
+.navbar-toggler span:nth-child(2) {
+    opacity: 1;
+}
+.navbar-toggler span:nth-child(3) {
+    transform: translate(0%, 0%) rotate(0deg) ;
+}
 

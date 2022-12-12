@@ -1,3 +1,9 @@
+{{-- @php
+   $url = asset('/storage/'.setting('site.nav_background_image'));
+   style="background-image: url('{{$url}}') "
+   
+@endphp --}}
+
 <header class="{{Route::currentRouteName()=='home' ? 'header navbar fixed-top mz-sm-none nav-scl' : 'fixed-top mz-sm-none transparent-header-lg-faq'}}">
     <div class="header-top">
        <div class="menu-area">

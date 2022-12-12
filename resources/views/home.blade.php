@@ -1,5 +1,13 @@
 
    @extends("layouts.smile.master")
+   @section("additional-coveragearea-css")
+   <style>
+      /* #coverage_location, #coverage_location>option {
+         width: 500px;
+         white-space: normal;
+      } */
+      </style>
+   @endsection
    @section('content')
 
   
