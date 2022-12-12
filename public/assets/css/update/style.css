@@ -849,6 +849,10 @@ select {
     color: #FFC215;
 }
 
+.dart-box .far{
+    color: #FFC215;
+}
+
 .dart-box .date {
     font-style: normal;
     font-weight: 400;

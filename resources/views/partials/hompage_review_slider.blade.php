@@ -69,9 +69,23 @@
                 <div class="col-lg-3 col-sm-12">
                     <img class="test-icon img-fluid" src="{{$customerReview->customer->photo != null ? asset('/storage/'.$customerReview->customer->photo) : asset('/storage/customers/happy_customer.png')}}" alt="">
                     <div class="dart-box">
-                        @for($i = 1; $i <= $customerReview->ratings; $i++)
+                        {{-- @for($i = 1; $i <= $customerReview->ratings; $i++)
                             <i class="fas fa-star" aria-hidden="true"></i>
+                        @endfor --}}
+
+                        {{-- @for ($i = 1; $i <= 5 - $customerReview->ratings; $i++)
+                        <i class="far fa-star" aria-hidden="false"></i>
+                        @endfor --}}
+
+                        @for ($i = 1; $i <= 5; $i++)
+                            @if ($i <= $customerReview->ratings)
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            @else
+                                <i class="far fa-star" aria-hidden="false"></i>
+                            @endif
+
                         @endfor
+
 
                         {{-- <span class="date-2 collapse" id="collapseWidthExample111"> This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered. </span> --}}
                         {{-- <a class="sml-rm-text" data-toggle="collapse" href="#collapseWidthExample111" aria-expanded="false" aria-controls="collapseWidthExample">Read more</a> --}}
