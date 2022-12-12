@@ -21,7 +21,7 @@
         }else{
             $listAncorClass = "dropdown-item ";
         }
-        $listItemClass = " ";
+        $listItemClass = "moz-active";
         $linkAttributes =  null;
         $styles = null;
         $icon = null;
@@ -54,6 +54,7 @@
         if(isset($options->icon) && $options->icon == true){
             $icon = '<i class="' . $item->icon_class . '"></i>';
         }
+
     @endphp
 
     <li>

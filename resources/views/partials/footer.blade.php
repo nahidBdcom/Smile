@@ -16,8 +16,8 @@
                    {!! setting('site.footer_head_office_address') !!}
                 </div>
              </div>
-             <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-2">
-                <h5 class="footer-title ftc">Collections</h5>
+             <div class="col-lg-3 col-sm-6 text-end fot-m or-sm-2"> 
+                <h5 class="footer-title ">Collections</h5>
                 <ul>
                   
 

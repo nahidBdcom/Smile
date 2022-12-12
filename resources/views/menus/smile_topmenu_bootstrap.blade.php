@@ -57,7 +57,7 @@
     @endphp
 
     <li {{ $loop->index == 0 ? 'class=first-menus' : ''}}>
-        <a href="{{ url($item->link()) }}">
+        <a href="{{ url($item->link()) }}" class="{{url($item->link()) == url()->current() ? (strpos(url()->current(), 'package') == false ? 'moz-active' : '') : '' }}">
             {{ $item->title }}
         </a>
         @if(!$originalItem->children->isEmpty())

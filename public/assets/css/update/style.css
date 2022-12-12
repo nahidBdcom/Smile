@@ -3268,7 +3268,7 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
         background: #03314B;
             box-shadow: 0px 6px 60px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px);
-            border-radius: 0px 0px 8px 8px;
+            border-radius:  8px;
             padding-bottom: 50px;
     }
 
@@ -3399,3 +3399,5 @@ border-right: 2px solid rgba(0, 0, 0, 0.1);
 .card-body li {
 	list-style: unset;
 }
+
+
