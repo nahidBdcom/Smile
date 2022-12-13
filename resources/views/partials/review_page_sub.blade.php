@@ -23,8 +23,8 @@
 
             <p class="date">{{$customerReview->review_date}}</p>
             <span class="date-2">{!! $customerReview->description !!}</span>
-            <span class="date-2 collapse" id="collapse{{$customerReview->id}}"> {!! $customerReview->description_more !!} </span>
-                  <a class="sml-rm-text" data-toggle="collapse" href="#collapse{{$customerReview->id}}" aria-expanded="false" aria-controls="collapse{{$customerReview->id}}">Read more</a>
+            <span class="date-2 collapse" id="collapse{{$customerReview->cr_id}}"> {!! $customerReview->description_more !!} </span>
+                  <a class="sml-rm-text read" data-toggle="collapse" href="#collapse{{$customerReview->cr_id}}" aria-expanded="false" aria-controls="collapse{{$customerReview->cr_id}}">Read more</a>
 
 
             <p class="date-3">{{$customerReview->customer->name}}</p>
@@ -36,6 +36,24 @@
         {{$customerReviews->links()}}
     </li>
  </div> 
+
+
+ <script>
+
+    $(document).ready(function(){
+        $(".read").click(function(){
+            $(this).prev().toggle();
+            $(this).siblings('.dots').toggle();
+            if($(this).text()=='Read more'){
+                $(this).text('Read less');
+            }
+            else{
+                $(this).text('Read more');
+            }
+        });
+    });
+    
+    </script>
 
 
 
