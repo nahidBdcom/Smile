@@ -3,7 +3,7 @@
 
 .navbar.active {
     //background-image: url("{{asset('/public/img/top-banner-img')}}"); 
-    background-image: url('../../img/top-banner-img.jpg'); 
+    //background-image: url('../../img/top-banner-img.jpg'); 
     //background-color: #f6f6f6;
 }
 
@@ -1572,7 +1572,7 @@ min-height: 426px;
 }
 
 .transparent-header-lg-faq {
-    background-image: url(../../img/top-banner-img.jpg);
+    //background-image: url(../../img/top-banner-img.jpg);
 }
 
 .breadcrumb {

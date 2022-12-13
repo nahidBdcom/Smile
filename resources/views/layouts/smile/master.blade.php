@@ -22,6 +22,14 @@
         @yield('additional-userreview-css')
         @yield('additional-coveragearea-css')
 
+        <style>
+          
+          .navbar.active, .transparent-header-lg-faq {
+                background-image: url('{{asset('/storage/'. setting('site.nav_background_image'))}}'); 
+            }
+
+        </style>
+
 
         <script type="text/javascript">
             function callbackThen(response) {
