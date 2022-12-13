@@ -23,9 +23,9 @@
         @yield('additional-coveragearea-css')
 
         <style>
-          
+
           .navbar.active, .transparent-header-lg-faq {
-                background-image: url('{{asset('/storage/'. setting('site.nav_background_image'))}}'); 
+                background-image: url('{{asset('/storage/'. setting('site.nav_background_image'))}}') !important; 
             }
 
         </style>
